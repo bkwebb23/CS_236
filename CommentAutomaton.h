@@ -1,0 +1,8 @@
+//
+// Created by bkweb on 9/16/2021.
+//
+
+#ifndef PROJECT_1_COMMENTAUTOMATON_H
+#define PROJECT_1_COMMENTAUTOMATON_H
+
+#endif //PROJECT_1_COMMENTAUTOMATON_H
