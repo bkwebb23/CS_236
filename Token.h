@@ -5,18 +5,34 @@
 enum class TokenType {
     COLON,
     COLON_DASH,
-    // TODO: add the other types of tokens
+    COMMA,
+    PERIOD,
+    Q_MARK,
+    LEFT_PAREN,
+    RIGHT_PAREN,
+    MULTIPLY,
+    ADD,
+    SCHEMES,
+    FACTS,
+    RULES,
+    QUERIES,
+    ID,
+    STRING,
+    COMMENT,
     UNDEFINED
-};
+}; // don't forget to include EOF
 
 class Token
 {
 private:
-    // TODO: add member variables for information needed by Token
+    std::string description;
+    TokenType type = type;
+    int line;// TODO: add member variables for information needed by Token
+    std::string tokenName();
 
 public:
     Token(TokenType type, std::string description, int line);
-
+    std::string toString();
     // TODO: add other needed methods
 };
 
