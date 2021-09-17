@@ -29,7 +29,7 @@ private:
     std::string description;
     TokenType type;
     int line;// TODO: add member variables for information needed by Token
-    std::string tokenName(TokenType type);
+    std::string tokenName(TokenType name);
 
 public:
     Token(TokenType type, std::string description, int line);

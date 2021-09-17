@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/project_1.dir/ColonDashAutomaton.cpp.o"
   "CMakeFiles/project_1.dir/CommentAutomaton.cpp.o"
   "CMakeFiles/project_1.dir/E_O_FAutomaton.cpp.o"
+  "CMakeFiles/project_1.dir/IDAutomaton.cpp.o"
   "CMakeFiles/project_1.dir/Lexer.cpp.o"
   "CMakeFiles/project_1.dir/MatcherAutomaton.cpp.o"
   "CMakeFiles/project_1.dir/StringAutomaton.cpp.o"

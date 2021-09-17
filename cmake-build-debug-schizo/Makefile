@@ -231,6 +231,33 @@ E_O_FAutomaton.cpp.s:
 	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/E_O_FAutomaton.cpp.s
 .PHONY : E_O_FAutomaton.cpp.s
 
+IDAutomaton.o: IDAutomaton.cpp.o
+
+.PHONY : IDAutomaton.o
+
+# target to build an object file
+IDAutomaton.cpp.o:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/IDAutomaton.cpp.o
+.PHONY : IDAutomaton.cpp.o
+
+IDAutomaton.i: IDAutomaton.cpp.i
+
+.PHONY : IDAutomaton.i
+
+# target to preprocess a source file
+IDAutomaton.cpp.i:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/IDAutomaton.cpp.i
+.PHONY : IDAutomaton.cpp.i
+
+IDAutomaton.s: IDAutomaton.cpp.s
+
+.PHONY : IDAutomaton.s
+
+# target to generate assembly for a file
+IDAutomaton.cpp.s:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/IDAutomaton.cpp.s
+.PHONY : IDAutomaton.cpp.s
+
 Lexer.o: Lexer.cpp.o
 
 .PHONY : Lexer.o
@@ -387,6 +414,9 @@ help:
 	@echo "... E_O_FAutomaton.o"
 	@echo "... E_O_FAutomaton.i"
 	@echo "... E_O_FAutomaton.s"
+	@echo "... IDAutomaton.o"
+	@echo "... IDAutomaton.i"
+	@echo "... IDAutomaton.s"
 	@echo "... Lexer.o"
 	@echo "... Lexer.i"
 	@echo "... Lexer.s"

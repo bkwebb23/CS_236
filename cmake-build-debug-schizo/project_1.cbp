@@ -111,6 +111,12 @@
 		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/E_O_FAutomaton.h">
 			<Option target="project_1"/>
 		</Unit>
+		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/IDAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/IDAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
 		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/Lexer.cpp">
 			<Option target="project_1"/>
 		</Unit>
