@@ -123,6 +123,33 @@ project_1/fast:
 	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/build
 .PHONY : project_1/fast
 
+BlockCommentAutomaton.o: BlockCommentAutomaton.cpp.o
+
+.PHONY : BlockCommentAutomaton.o
+
+# target to build an object file
+BlockCommentAutomaton.cpp.o:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.o
+.PHONY : BlockCommentAutomaton.cpp.o
+
+BlockCommentAutomaton.i: BlockCommentAutomaton.cpp.i
+
+.PHONY : BlockCommentAutomaton.i
+
+# target to preprocess a source file
+BlockCommentAutomaton.cpp.i:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.i
+.PHONY : BlockCommentAutomaton.cpp.i
+
+BlockCommentAutomaton.s: BlockCommentAutomaton.cpp.s
+
+.PHONY : BlockCommentAutomaton.s
+
+# target to generate assembly for a file
+BlockCommentAutomaton.cpp.s:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.s
+.PHONY : BlockCommentAutomaton.cpp.s
+
 ColonAutomaton.o: ColonAutomaton.cpp.o
 
 .PHONY : ColonAutomaton.o
@@ -366,6 +393,33 @@ Token.cpp.s:
 	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/Token.cpp.s
 .PHONY : Token.cpp.s
 
+UnclosedStringAutomaton.o: UnclosedStringAutomaton.cpp.o
+
+.PHONY : UnclosedStringAutomaton.o
+
+# target to build an object file
+UnclosedStringAutomaton.cpp.o:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.o
+.PHONY : UnclosedStringAutomaton.cpp.o
+
+UnclosedStringAutomaton.i: UnclosedStringAutomaton.cpp.i
+
+.PHONY : UnclosedStringAutomaton.i
+
+# target to preprocess a source file
+UnclosedStringAutomaton.cpp.i:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.i
+.PHONY : UnclosedStringAutomaton.cpp.i
+
+UnclosedStringAutomaton.s: UnclosedStringAutomaton.cpp.s
+
+.PHONY : UnclosedStringAutomaton.s
+
+# target to generate assembly for a file
+UnclosedStringAutomaton.cpp.s:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.s
+.PHONY : UnclosedStringAutomaton.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -402,6 +456,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... project_1"
+	@echo "... BlockCommentAutomaton.o"
+	@echo "... BlockCommentAutomaton.i"
+	@echo "... BlockCommentAutomaton.s"
 	@echo "... ColonAutomaton.o"
 	@echo "... ColonAutomaton.i"
 	@echo "... ColonAutomaton.s"
@@ -429,6 +486,9 @@ help:
 	@echo "... Token.o"
 	@echo "... Token.i"
 	@echo "... Token.s"
+	@echo "... UnclosedStringAutomaton.o"
+	@echo "... UnclosedStringAutomaton.i"
+	@echo "... UnclosedStringAutomaton.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -87,6 +87,12 @@
 		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/Automaton.h">
 			<Option target="project_1"/>
 		</Unit>
+		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/BlockCommentAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/BlockCommentAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
 		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/ColonAutomaton.cpp">
 			<Option target="project_1"/>
 		</Unit>
@@ -139,6 +145,12 @@
 			<Option target="project_1"/>
 		</Unit>
 		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/Token.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/UnclosedStringAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/UnclosedStringAutomaton.h">
 			<Option target="project_1"/>
 		</Unit>
 		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/main.cpp">

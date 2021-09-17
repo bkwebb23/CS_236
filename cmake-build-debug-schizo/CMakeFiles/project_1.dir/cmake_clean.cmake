@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.o"
   "CMakeFiles/project_1.dir/ColonAutomaton.cpp.o"
   "CMakeFiles/project_1.dir/ColonDashAutomaton.cpp.o"
   "CMakeFiles/project_1.dir/CommentAutomaton.cpp.o"
@@ -8,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/project_1.dir/MatcherAutomaton.cpp.o"
   "CMakeFiles/project_1.dir/StringAutomaton.cpp.o"
   "CMakeFiles/project_1.dir/Token.cpp.o"
+  "CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.o"
   "CMakeFiles/project_1.dir/main.cpp.o"
   "project_1"
   "project_1.pdb"

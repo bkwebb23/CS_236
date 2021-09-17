@@ -7,6 +7,8 @@
 #include "MatcherAutomaton.h"
 #include "StringAutomaton.h"
 #include "IDAutomaton.h"
+#include "BlockCommentAutomaton.h"
+#include "UnclosedStringAutomaton.h"
 
 using namespace std;
 
@@ -42,7 +44,8 @@ void Lexer::CreateAutomata() {
     automata.push_back(new StringAutomaton());
     automata.push_back(new CommentAutomaton());
     automata.push_back(new IDAutomaton());
-    // TODO: Add the other needed automata here
+    automata.push_back(new BlockCommentAutomaton());
+    automata.push_back(new UnclosedStringAutomaton());
     automata.push_back(new E_O_FAutomaton());
 }
 
@@ -85,46 +88,6 @@ void Lexer::Run(std::string& input) {
     lineNumber += automata.back()->NewLinesRead();
     tokens.push_back(newToken);
     // add end of file token to all tokens
-
-
-    // PSEUDOCODE
-    /*
-    set lineNumber to 1
-    // While there are more characters to tokenize
-    loop while instring.size() > 0 {
-        set maxRead to 0
-        set maxAutomaton to the first automaton in automata
-
-        // TODO: you need to handle whitespace in between tokens
-
-        // Here is the "Parallel" part of the algorithm
-        //   Each automaton runs with the same instring
-        foreach automaton in automata {
-            inputRead = automaton.Start(instring)
-            if (inputRead > maxRead) {
-                set maxRead to inputRead
-                set maxAutomaton to automaton
-            }
-        }
-        // Here is the "Max" part of the algorithm
-        if maxRead > 0 {
-            set newToken to maxAutomaton.CreateToken(...)
-                increment lineNumber by maxAutomaton.NewLinesRead()
-                add newToken to collection of all tokens
-        }
-        // No automaton accepted instring
-        // Create single character undefined token
-        else {
-            set maxRead to 1
-                set newToken to a  new undefined Token
-                (with first character of instring)
-                add newToken to collection of all tokens
-        }
-        // Update `instring` by removing characters read to create Token
-        remove maxRead characters from instring
-    }
-    add end of file token to all tokens
-    */
 }
 
 string Lexer::toString() {

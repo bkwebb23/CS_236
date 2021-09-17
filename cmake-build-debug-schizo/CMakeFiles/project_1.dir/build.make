@@ -187,6 +187,32 @@ CMakeFiles/project_1.dir/IDAutomaton.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_1.dir/IDAutomaton.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/IDAutomaton.cpp -o CMakeFiles/project_1.dir/IDAutomaton.cpp.s
 
+CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.o: CMakeFiles/project_1.dir/flags.make
+CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.o: ../BlockCommentAutomaton.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/cmake-build-debug-schizo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.o -c /users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/BlockCommentAutomaton.cpp
+
+CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/BlockCommentAutomaton.cpp > CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.i
+
+CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/BlockCommentAutomaton.cpp -o CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.s
+
+CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.o: CMakeFiles/project_1.dir/flags.make
+CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.o: ../UnclosedStringAutomaton.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/cmake-build-debug-schizo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.o -c /users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/UnclosedStringAutomaton.cpp
+
+CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/UnclosedStringAutomaton.cpp > CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.i
+
+CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/UnclosedStringAutomaton.cpp -o CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.s
+
 # Object files for target project_1
 project_1_OBJECTS = \
 "CMakeFiles/project_1.dir/ColonAutomaton.cpp.o" \
@@ -198,7 +224,9 @@ project_1_OBJECTS = \
 "CMakeFiles/project_1.dir/E_O_FAutomaton.cpp.o" \
 "CMakeFiles/project_1.dir/MatcherAutomaton.cpp.o" \
 "CMakeFiles/project_1.dir/StringAutomaton.cpp.o" \
-"CMakeFiles/project_1.dir/IDAutomaton.cpp.o"
+"CMakeFiles/project_1.dir/IDAutomaton.cpp.o" \
+"CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.o" \
+"CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.o"
 
 # External object files for target project_1
 project_1_EXTERNAL_OBJECTS =
@@ -213,9 +241,11 @@ project_1: CMakeFiles/project_1.dir/E_O_FAutomaton.cpp.o
 project_1: CMakeFiles/project_1.dir/MatcherAutomaton.cpp.o
 project_1: CMakeFiles/project_1.dir/StringAutomaton.cpp.o
 project_1: CMakeFiles/project_1.dir/IDAutomaton.cpp.o
+project_1: CMakeFiles/project_1.dir/BlockCommentAutomaton.cpp.o
+project_1: CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.o
 project_1: CMakeFiles/project_1.dir/build.make
 project_1: CMakeFiles/project_1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/cmake-build-debug-schizo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable project_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/cmake-build-debug-schizo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable project_1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/project_1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

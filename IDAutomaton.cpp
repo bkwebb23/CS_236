@@ -20,7 +20,7 @@ void IDAutomaton::S0(const std::string& input) {
 
 void IDAutomaton::S1(const std::string &input) {
     index = 0;
-    while(input.size() > 0 && (std::isalnum(input[index]))){
+    while(!input.empty() && (std::isalnum(input[index]))){
         index++;
         inputRead++;
     }
