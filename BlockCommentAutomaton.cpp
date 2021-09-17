@@ -26,6 +26,9 @@ void BlockCommentAutomaton::S1(const std::string &input) {
 
 void BlockCommentAutomaton::S2(const std::string &input) {
     while (!input.substr(index).empty() && input[index] != '|') {
+        if (input[index] == '\n') {
+            newLines++;
+        }
         index++;
         inputRead++;
     }
