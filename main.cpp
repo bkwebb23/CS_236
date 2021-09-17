@@ -1,6 +1,5 @@
 #include <fstream>
 #include <iostream>
-#include <string>
 #include "Lexer.h"
 
 using namespace std;
@@ -21,11 +20,8 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    cout << argv[0] << "\n" << "test\n" << argv[1] << "\n";
-
     string input((std::istreambuf_iterator<char>(inFile)),
              (std::istreambuf_iterator<char>()));
-    cout << input << "\n";
 
     Lexer* lexer = new Lexer(input);
 
