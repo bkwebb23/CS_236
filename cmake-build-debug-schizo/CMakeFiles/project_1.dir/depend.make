@@ -36,6 +36,11 @@ CMakeFiles/project_1.dir/MatcherAutomaton.cpp.o: ../MatcherAutomaton.cpp
 CMakeFiles/project_1.dir/MatcherAutomaton.cpp.o: ../MatcherAutomaton.h
 CMakeFiles/project_1.dir/MatcherAutomaton.cpp.o: ../Token.h
 
+CMakeFiles/project_1.dir/StringAutomaton.cpp.o: ../Automaton.h
+CMakeFiles/project_1.dir/StringAutomaton.cpp.o: ../StringAutomaton.cpp
+CMakeFiles/project_1.dir/StringAutomaton.cpp.o: ../StringAutomaton.h
+CMakeFiles/project_1.dir/StringAutomaton.cpp.o: ../Token.h
+
 CMakeFiles/project_1.dir/Token.cpp.o: ../Token.cpp
 CMakeFiles/project_1.dir/Token.cpp.o: ../Token.h
 
