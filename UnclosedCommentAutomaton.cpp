@@ -25,6 +25,9 @@ void UnclosedCommentAutomaton::S1(const std::string &input) {
 
 void UnclosedCommentAutomaton::S2(const std::string &input) {
     while (!input.substr(index).empty() && input[index] != '|') {
+        if (input[index] == '\n') {
+            newLines++;
+        }
         index++;
         inputRead++;
     }

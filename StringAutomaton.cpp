@@ -15,6 +15,9 @@ void StringAutomaton::S0(const std::string& input) {
 void StringAutomaton::S1(const std::string &input) {
     index = 0;
     while (input[index] != '\'' && !input.substr(index).empty()) {
+        if (input[index] == '\n') {
+            newLines++;
+        }
         index++;
         inputRead++;
     }
