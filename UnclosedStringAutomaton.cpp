@@ -16,11 +16,11 @@ void UnclosedStringAutomaton::S0(const std::string& input) {
 void UnclosedStringAutomaton::S1(const std::string &input) {
     index = 0;
     while (input[index] != '\'' && !input.substr(index).empty()) {
-        index++;
-        inputRead++;
         if (input[index] == '\n'){
             newLines++;
         }
+        index++;
+        inputRead++;
     }
     if (input[index] == '\'') {
         inputRead++;
@@ -31,7 +31,7 @@ void UnclosedStringAutomaton::S1(const std::string &input) {
 
 void UnclosedStringAutomaton::S2(const std::string &input) {
     index = 0;
-    if ((input.empty())| (input[0] != '\'')) {
+    if ((input.empty()) | (input[0] != '\'')) {
         Serr();
     } else {
         index++;
