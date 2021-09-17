@@ -147,6 +147,12 @@
 		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/Token.h">
 			<Option target="project_1"/>
 		</Unit>
+		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/UnclosedCommentAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/UnclosedCommentAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
 		<Unit filename="/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/UnclosedStringAutomaton.cpp">
 			<Option target="project_1"/>
 		</Unit>

@@ -9,6 +9,7 @@
 #include "IDAutomaton.h"
 #include "BlockCommentAutomaton.h"
 #include "UnclosedStringAutomaton.h"
+#include "UnclosedCommentAutomaton.h"
 
 using namespace std;
 
@@ -46,6 +47,7 @@ void Lexer::CreateAutomata() {
     automata.push_back(new IDAutomaton());
     automata.push_back(new BlockCommentAutomaton());
     automata.push_back(new UnclosedStringAutomaton());
+    automata.push_back(new UnclosedCommentAutomaton());
     automata.push_back(new E_O_FAutomaton());
 }
 

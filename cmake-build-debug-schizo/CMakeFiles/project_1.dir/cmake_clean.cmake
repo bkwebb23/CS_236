@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/project_1.dir/MatcherAutomaton.cpp.o"
   "CMakeFiles/project_1.dir/StringAutomaton.cpp.o"
   "CMakeFiles/project_1.dir/Token.cpp.o"
+  "CMakeFiles/project_1.dir/UnclosedCommentAutomaton.cpp.o"
   "CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.o"
   "CMakeFiles/project_1.dir/main.cpp.o"
   "project_1"

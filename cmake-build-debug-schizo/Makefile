@@ -393,6 +393,33 @@ Token.cpp.s:
 	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/Token.cpp.s
 .PHONY : Token.cpp.s
 
+UnclosedCommentAutomaton.o: UnclosedCommentAutomaton.cpp.o
+
+.PHONY : UnclosedCommentAutomaton.o
+
+# target to build an object file
+UnclosedCommentAutomaton.cpp.o:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/UnclosedCommentAutomaton.cpp.o
+.PHONY : UnclosedCommentAutomaton.cpp.o
+
+UnclosedCommentAutomaton.i: UnclosedCommentAutomaton.cpp.i
+
+.PHONY : UnclosedCommentAutomaton.i
+
+# target to preprocess a source file
+UnclosedCommentAutomaton.cpp.i:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/UnclosedCommentAutomaton.cpp.i
+.PHONY : UnclosedCommentAutomaton.cpp.i
+
+UnclosedCommentAutomaton.s: UnclosedCommentAutomaton.cpp.s
+
+.PHONY : UnclosedCommentAutomaton.s
+
+# target to generate assembly for a file
+UnclosedCommentAutomaton.cpp.s:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/UnclosedCommentAutomaton.cpp.s
+.PHONY : UnclosedCommentAutomaton.cpp.s
+
 UnclosedStringAutomaton.o: UnclosedStringAutomaton.cpp.o
 
 .PHONY : UnclosedStringAutomaton.o
@@ -486,6 +513,9 @@ help:
 	@echo "... Token.o"
 	@echo "... Token.i"
 	@echo "... Token.s"
+	@echo "... UnclosedCommentAutomaton.o"
+	@echo "... UnclosedCommentAutomaton.i"
+	@echo "... UnclosedCommentAutomaton.s"
 	@echo "... UnclosedStringAutomaton.o"
 	@echo "... UnclosedStringAutomaton.i"
 	@echo "... UnclosedStringAutomaton.s"
