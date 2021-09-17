@@ -285,6 +285,33 @@ MatcherAutomaton.cpp.s:
 	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/MatcherAutomaton.cpp.s
 .PHONY : MatcherAutomaton.cpp.s
 
+StringAutomaton.o: StringAutomaton.cpp.o
+
+.PHONY : StringAutomaton.o
+
+# target to build an object file
+StringAutomaton.cpp.o:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/StringAutomaton.cpp.o
+.PHONY : StringAutomaton.cpp.o
+
+StringAutomaton.i: StringAutomaton.cpp.i
+
+.PHONY : StringAutomaton.i
+
+# target to preprocess a source file
+StringAutomaton.cpp.i:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/StringAutomaton.cpp.i
+.PHONY : StringAutomaton.cpp.i
+
+StringAutomaton.s: StringAutomaton.cpp.s
+
+.PHONY : StringAutomaton.s
+
+# target to generate assembly for a file
+StringAutomaton.cpp.s:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/StringAutomaton.cpp.s
+.PHONY : StringAutomaton.cpp.s
+
 Token.o: Token.cpp.o
 
 .PHONY : Token.o
@@ -366,6 +393,9 @@ help:
 	@echo "... MatcherAutomaton.o"
 	@echo "... MatcherAutomaton.i"
 	@echo "... MatcherAutomaton.s"
+	@echo "... StringAutomaton.o"
+	@echo "... StringAutomaton.i"
+	@echo "... StringAutomaton.s"
 	@echo "... Token.o"
 	@echo "... Token.i"
 	@echo "... Token.s"

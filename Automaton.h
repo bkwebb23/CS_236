@@ -18,8 +18,8 @@ public:
     Automaton(TokenType type) { this->type = type; }
 
     // Start the automaton and return the number of characters read
-    //   read == 0 indicates the input was rejected
-    //   read  > 0 indicates the input was accepted
+    //   read == 0 indicates the fin was rejected
+    //   read  > 0 indicates the fin was accepted
     int Start(const std::string& input) {
         newLines = 0;
         inputRead = 0;
@@ -32,11 +32,12 @@ public:
     virtual void S0(const std::string& input) = 0;
 
     void Serr() {
-        // Indicate the input was rejected
+        // Indicate the fin was rejected
         inputRead = 0;
     }
 
     virtual Token* CreateToken(std::string input, int lineNumber) { return new Token(type, input.substr(0, inputRead), lineNumber); }
+ //   virtual Token* CreateUndefinedToken(std::string input, int lineNumber) {return new Token(type, input.substr(0, inputRead), lineNumber};
 
     int NewLinesRead() const { return newLines; }
 };

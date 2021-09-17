@@ -28,7 +28,13 @@ CMakeFiles/project_1.dir/Lexer.cpp.o: ../CommentAutomaton.h
 CMakeFiles/project_1.dir/Lexer.cpp.o: ../E_O_FAutomaton.h
 CMakeFiles/project_1.dir/Lexer.cpp.o: ../Lexer.cpp
 CMakeFiles/project_1.dir/Lexer.cpp.o: ../Lexer.h
+CMakeFiles/project_1.dir/Lexer.cpp.o: ../MatcherAutomaton.h
 CMakeFiles/project_1.dir/Lexer.cpp.o: ../Token.h
+
+CMakeFiles/project_1.dir/MatcherAutomaton.cpp.o: ../Automaton.h
+CMakeFiles/project_1.dir/MatcherAutomaton.cpp.o: ../MatcherAutomaton.cpp
+CMakeFiles/project_1.dir/MatcherAutomaton.cpp.o: ../MatcherAutomaton.h
+CMakeFiles/project_1.dir/MatcherAutomaton.cpp.o: ../Token.h
 
 CMakeFiles/project_1.dir/Token.cpp.o: ../Token.cpp
 CMakeFiles/project_1.dir/Token.cpp.o: ../Token.h

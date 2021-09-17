@@ -4,18 +4,19 @@
 #include "ColonDashAutomaton.h"
 #include "CommentAutomaton.h"
 #include "E_O_FAutomaton.h"
+#include "MatcherAutomaton.h"
 
 using namespace std;
 
 Lexer::Lexer() {
     CreateAutomata();
-    input = "";
+    fin = "";
 }
 
 Lexer::Lexer(string inFile) {
-    this->input = inFile;
+    this->fin = inFile;
     CreateAutomata();
-    this->Run(input);
+    this->Run(fin);
 }
 
 Lexer::~Lexer() {
@@ -25,6 +26,17 @@ Lexer::~Lexer() {
 void Lexer::CreateAutomata() {
     automata.push_back(new ColonAutomaton());
     automata.push_back(new ColonDashAutomaton());
+    automata.push_back(new MatcherAutomaton("."));
+    automata.push_back(new MatcherAutomaton(","));
+    automata.push_back(new MatcherAutomaton("?"));
+    automata.push_back(new MatcherAutomaton("("));
+    automata.push_back(new MatcherAutomaton(")"));
+    automata.push_back(new MatcherAutomaton("*"));
+    automata.push_back(new MatcherAutomaton("+"));
+    automata.push_back(new MatcherAutomaton("Schemes"));
+    automata.push_back(new MatcherAutomaton("Queries"));
+    automata.push_back(new MatcherAutomaton("Facts"));
+    automata.push_back(new MatcherAutomaton("Rules"));
     automata.push_back(new CommentAutomaton());
     // TODO: Add the other needed automata here
     automata.push_back(new E_O_FAutomaton());
@@ -58,13 +70,12 @@ void Lexer::Run(std::string& input) {
         }
         else {
             maxRead = 1;
-            // set newToken to a  new undefined Token
-            // (with first character of input)
-            //add newToken to collection of all token
+            Token* newToken = new Token(TokenType::UNDEFINED, input.substr(0, maxRead), lineNumber);
+            tokens.push_back(newToken);
         }
         input = input.substr(maxRead);
-        // Update `input` by removing characters read to create Token
-        // remove maxRead characters from input
+        // Update `instring` by removing characters read to create Token
+        // remove maxRead characters from instring
     }
     Token* newToken = automata.back()->CreateToken(input, lineNumber);
     lineNumber += automata.back()->NewLinesRead();
@@ -76,16 +87,16 @@ void Lexer::Run(std::string& input) {
     /*
     set lineNumber to 1
     // While there are more characters to tokenize
-    loop while input.size() > 0 {
+    loop while instring.size() > 0 {
         set maxRead to 0
         set maxAutomaton to the first automaton in automata
 
         // TODO: you need to handle whitespace in between tokens
 
         // Here is the "Parallel" part of the algorithm
-        //   Each automaton runs with the same input
+        //   Each automaton runs with the same instring
         foreach automaton in automata {
-            inputRead = automaton.Start(input)
+            inputRead = automaton.Start(instring)
             if (inputRead > maxRead) {
                 set maxRead to inputRead
                 set maxAutomaton to automaton
@@ -97,16 +108,16 @@ void Lexer::Run(std::string& input) {
                 increment lineNumber by maxAutomaton.NewLinesRead()
                 add newToken to collection of all tokens
         }
-        // No automaton accepted input
+        // No automaton accepted instring
         // Create single character undefined token
         else {
             set maxRead to 1
                 set newToken to a  new undefined Token
-                (with first character of input)
+                (with first character of instring)
                 add newToken to collection of all tokens
         }
-        // Update `input` by removing characters read to create Token
-        remove maxRead characters from input
+        // Update `instring` by removing characters read to create Token
+        remove maxRead characters from instring
     }
     add end of file token to all tokens
     */

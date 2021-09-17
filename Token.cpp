@@ -56,7 +56,7 @@ std::string Token::tokenName(TokenType type) {
     } else if (type == TokenType::COMMENT) {
         return "COMMENT";
     } else if (type == TokenType::E_O_F) {
-        return "E_O_F";
+        return "EOF";
     } else if (type == TokenType::UNDEFINED) {
         return "UNDEFINED";
     }
