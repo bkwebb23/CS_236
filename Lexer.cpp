@@ -5,6 +5,7 @@
 #include "CommentAutomaton.h"
 #include "E_O_FAutomaton.h"
 #include "MatcherAutomaton.h"
+#include "StringAutomaton.h"
 
 using namespace std;
 
@@ -37,6 +38,7 @@ void Lexer::CreateAutomata() {
     automata.push_back(new MatcherAutomaton("Queries"));
     automata.push_back(new MatcherAutomaton("Facts"));
     automata.push_back(new MatcherAutomaton("Rules"));
+    automata.push_back(new StringAutomaton());
     automata.push_back(new CommentAutomaton());
     // TODO: Add the other needed automata here
     automata.push_back(new E_O_FAutomaton());
