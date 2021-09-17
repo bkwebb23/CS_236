@@ -2,6 +2,8 @@
 #include "Lexer.h"
 #include "ColonAutomaton.h"
 #include "ColonDashAutomaton.h"
+#include "CommentAutomaton.h"
+#include "E_O_FAutomaton.h"
 
 using namespace std;
 
@@ -11,7 +13,7 @@ Lexer::Lexer() {
 }
 
 Lexer::Lexer(string inFile) {
-    input = inFile;
+    this->input = inFile;
     CreateAutomata();
     this->Run(input);
 }
@@ -23,7 +25,9 @@ Lexer::~Lexer() {
 void Lexer::CreateAutomata() {
     automata.push_back(new ColonAutomaton());
     automata.push_back(new ColonDashAutomaton());
+    automata.push_back(new CommentAutomaton());
     // TODO: Add the other needed automata here
+    automata.push_back(new E_O_FAutomaton());
 }
 
 void Lexer::Run(std::string& input) {
@@ -32,8 +36,15 @@ void Lexer::Run(std::string& input) {
     while (!input.empty()) {
         unsigned int maxRead = 0;
         unsigned int maxAutomaton = 0;
+        while(!input.empty() && isspace(input[0])) {
+            if (input[0] == '\n') {
+                lineNumber++;
+            }
+            input = input.substr(1);
+        }
+        if (input.empty()) break;
         for (unsigned int i =0; i < automata.size(); i++) {
-            int inputRead = 0;
+            unsigned int inputRead = 0;
             inputRead = automata.at(i)->Start(input);
             if (inputRead > maxRead) {
                 maxRead = inputRead;
@@ -55,6 +66,9 @@ void Lexer::Run(std::string& input) {
         // Update `input` by removing characters read to create Token
         // remove maxRead characters from input
     }
+    Token* newToken = automata.back()->CreateToken(input, lineNumber);
+    lineNumber += automata.back()->NewLinesRead();
+    tokens.push_back(newToken);
     // add end of file token to all tokens
 
 

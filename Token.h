@@ -19,6 +19,7 @@ enum class TokenType {
     ID,
     STRING,
     COMMENT,
+    E_O_F,
     UNDEFINED
 }; // don't forget to include EOF
 
@@ -26,13 +27,15 @@ class Token
 {
 private:
     std::string description;
-    TokenType type = type;
+    TokenType type;
     int line;// TODO: add member variables for information needed by Token
-    std::string tokenName();
+    std::string tokenName(TokenType type);
 
 public:
     Token(TokenType type, std::string description, int line);
     std::string toString();
+
+    TokenType getType() const;
     // TODO: add other needed methods
 };
 

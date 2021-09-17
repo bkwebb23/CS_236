@@ -25,6 +25,7 @@ int main(int argc, char** argv) {
 
     string input((std::istreambuf_iterator<char>(inFile)),
              (std::istreambuf_iterator<char>()));
+    cout << input << "\n";
 
     Lexer* lexer = new Lexer(input);
 

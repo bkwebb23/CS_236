@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/Automaton.h
+Token.h
+/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/Token.h
+
+/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/E_O_FAutomaton.cpp
+iostream
+-
+E_O_FAutomaton.h
+/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/E_O_FAutomaton.h
+
+/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/E_O_FAutomaton.h
+Automaton.h
+/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/Automaton.h
+
+/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/Token.h
+string
+-
+
