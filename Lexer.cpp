@@ -1,4 +1,6 @@
 #include <sstream>
+#include <iostream>
+#include <typeinfo>
 #include "Lexer.h"
 #include "ColonAutomaton.h"
 #include "ColonDashAutomaton.h"
@@ -29,6 +31,8 @@ Lexer::~Lexer() {
 }
 
 void Lexer::CreateAutomata() {
+    automata.push_back(new BlockCommentAutomaton());
+    automata.push_back(new UnclosedCommentAutomaton());
     automata.push_back(new ColonAutomaton());
     automata.push_back(new ColonDashAutomaton());
     automata.push_back(new MatcherAutomaton("."));
@@ -45,51 +49,64 @@ void Lexer::CreateAutomata() {
     automata.push_back(new StringAutomaton());
     automata.push_back(new CommentAutomaton());
     automata.push_back(new IDAutomaton());
-    automata.push_back(new BlockCommentAutomaton());
     automata.push_back(new UnclosedStringAutomaton());
-    automata.push_back(new UnclosedCommentAutomaton());
     automata.push_back(new E_O_FAutomaton());
 }
 
 void Lexer::Run(std::string& input) {
-    // TODO: convert this pseudo-code with the algorithm into actual C++ code
+
     unsigned int lineNumber = 1;
+
+    /* While there are more characters to tokenize */
     while (!input.empty()) {
-        unsigned int maxRead = 0;
-        unsigned int maxAutomaton = 0;
+        unsigned int maxRead = 0;   //  Set number of characters in input string to 0
+        unsigned int maxAutomaton = 0;  // Set max automaton to the first automaton in automata
+
+        /* Checks for whitespace and increments the line number counter as necessary */
         while(!input.empty() && isspace(input[0])) {
             if (input[0] == '\n') {
                 lineNumber++;
             }
             input = input.substr(1);
         }
-        if (input.empty()) break;
+
+        if (input.empty()) break; // Ends loop if end-of-file is reached
+
+        /* Runs the input string on each FSA, and the index of the FSA that accepts the largest portion of the
+         * input string is assigned to 'maxAutomaton'. The number of characters accepted by that FSA is
+         * assigned to 'maxRead'.*/
         for (unsigned int i =0; i < automata.size(); i++) {
             unsigned int inputRead = 0;
             inputRead = automata.at(i)->Start(input);
-            if (inputRead > maxRead) {
+            if (i == 0 && inputRead > 0) {
+                maxRead = inputRead;
+                maxAutomaton = i;
+                break;
+            }
+            if (inputRead > maxRead) { // If given FSA read the most number of characters, store inputRead to maxRead
                 maxRead = inputRead;
                 maxAutomaton = i;
             }
         }
-        if (maxRead > 0) {
+        if (maxRead > 0) { // Tokenize based off of whichever FSA accepted the most characters
             Token* newToken = automata.at(maxAutomaton)->CreateToken(input, lineNumber);
             lineNumber += automata.at(maxAutomaton)->NewLinesRead();
             tokens.push_back(newToken);
         }
-        else {
+        else { // If no FSA accepted, create UNDEFINED token (this is, perhaps, obsolete?)
             maxRead = 1;
             Token* newToken = new Token(TokenType::UNDEFINED, input.substr(0, maxRead), lineNumber);
             tokens.push_back(newToken);
         }
+
+        // Update `input` by removing characters read to create Token
         input = input.substr(maxRead);
-        // Update `instring` by removing characters read to create Token
-        // remove maxRead characters from instring
     }
+
+    // add end of file token to all tokens
     Token* newToken = automata.back()->CreateToken(input, lineNumber);
     lineNumber += automata.back()->NewLinesRead();
     tokens.push_back(newToken);
-    // add end of file token to all tokens
 }
 
 string Lexer::toString() {
