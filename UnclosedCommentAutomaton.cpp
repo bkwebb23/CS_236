@@ -14,6 +14,7 @@ void UnclosedCommentAutomaton::S0(const std::string &input) {
 }
 
 void UnclosedCommentAutomaton::S1(const std::string &input) {
+    index = 0;
     if(!input.empty() && input[0] == '|'){
         index++;
         inputRead++;
@@ -24,6 +25,7 @@ void UnclosedCommentAutomaton::S1(const std::string &input) {
 }
 
 void UnclosedCommentAutomaton::S2(const std::string &input) {
+    index = 0;
     while (!input.substr(index).empty() && input[index] != '|') {
         if (input[index] == '\n') {
             newLines++;
@@ -39,9 +41,13 @@ void UnclosedCommentAutomaton::S2(const std::string &input) {
 }
 
 void UnclosedCommentAutomaton::S3(const std::string& input) {
+    index = 0;
     if(!input.empty() && input[0] == '#'){
         Serr();
     } else if (!input.empty()){
+        if (input[index] == '\n') {
+            newLines++;
+        }
         index++;
         inputRead++;
         S2(input.substr(index));

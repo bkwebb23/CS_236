@@ -36,6 +36,8 @@ void BlockCommentAutomaton::S2(const std::string &input) {
         index++;
         inputRead++;
         S3(input);
+    } else {
+        Serr();
     }
 }
 
@@ -47,5 +49,7 @@ void BlockCommentAutomaton::S3(const std::string &input) {
     } else if (!input.substr(index).empty()){
         index++;
         inputRead++;
+    } else {
+        Serr();
     }
 }

@@ -14,7 +14,7 @@ private:
     void S3(const std::string& input);
     void S4(const std::string& input);
 public:
-    UnclosedCommentAutomaton() : Automaton(TokenType::COMMENT) {}
+    UnclosedCommentAutomaton() : Automaton(TokenType::UNDEFINED) {}
     void S0(const std::string& input);
 };
 
