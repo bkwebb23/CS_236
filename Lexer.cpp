@@ -1,6 +1,4 @@
 #include <sstream>
-#include <iostream>
-#include <typeinfo>
 #include "Lexer.h"
 #include "ColonAutomaton.h"
 #include "ColonDashAutomaton.h"
