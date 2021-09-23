@@ -12,6 +12,7 @@ void CommentAutomaton::S0(const std::string& input) {
     }
 }
 void CommentAutomaton::S1(const std::string& input) {
+    // Consumes entire line; will not reject input
     while (!input.substr(index).empty()) {
         if (input[index] == '\n') {
             break;

@@ -15,18 +15,13 @@ private:
     std::string fin;
     void CreateAutomata();
 
-    // TODO: add any other private methods here (if needed)
-
 public:
-    Lexer(string inFile);
+    explicit Lexer(string inFile);
     Lexer();
     ~Lexer();
 
     void Run(std::string& instring);
     string toString();
-    
-    // TODO: add other public methods here
-
 };
 
 #endif // LEXER_H

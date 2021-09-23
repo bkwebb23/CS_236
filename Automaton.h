@@ -18,8 +18,8 @@ public:
     Automaton(TokenType type) { this->type = type; }
 
     // Start the automaton and return the number of characters read
-    //   read == 0 indicates the fin was rejected
-    //   read  > 0 indicates the fin was accepted
+    //   inputRead == 0 indicates the fin was rejected
+    //   inputRead  > 0 indicates the fin was accepted
     int Start(const std::string& input) {
         newLines = 0;
         inputRead = 0;
