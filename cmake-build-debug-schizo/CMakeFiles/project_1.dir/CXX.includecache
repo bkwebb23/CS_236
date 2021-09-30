@@ -6,5 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/users/guest/b/bkwebb23/users/guest/b/bkwebb23/project-1/Parser pseudocode.cpp
+/users/guest/b/bkwebb23/project-1/Parser.cpp
+Parser.h
+/users/guest/b/bkwebb23/project-1/Parser.h
+Token.h
+/users/guest/b/bkwebb23/project-1/Token.h
+sstream
+-
+
+/users/guest/b/bkwebb23/project-1/Parser.h
+vector
+-
+string
+-
+iostream
+/users/guest/b/bkwebb23/project-1/iostream
+Token.h
+/users/guest/b/bkwebb23/project-1/Token.h
+
+/users/guest/b/bkwebb23/project-1/Token.h
+string
+-
 

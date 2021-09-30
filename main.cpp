@@ -26,10 +26,17 @@ int main(int argc, char** argv) {
 
     Lexer* lexer = new Lexer(input);
 
-    //cout << lexer->toString() << "\n";
-
     vector<Token*> tokens = lexer->getTokens();
-    Parser* parser = new Parser(tokens);
+
+    vector<Token*> tokensWOComments;
+
+    for (unsigned int i= 0; i < tokens.size(); i++) {
+        if (tokens.at(i)->getType() != TokenType::COMMENT) {
+            tokensWOComments.push_back(tokens.at(i));
+        }
+    }
+
+    Parser* parser = new Parser(tokensWOComments);
     cout << parser->toString() << "\n";
 
     delete lexer;
