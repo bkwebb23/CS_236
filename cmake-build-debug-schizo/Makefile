@@ -339,6 +339,33 @@ MatcherAutomaton.cpp.s:
 	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/MatcherAutomaton.cpp.s
 .PHONY : MatcherAutomaton.cpp.s
 
+Parser_pseudocode.o: Parser_pseudocode.cpp.o
+
+.PHONY : Parser_pseudocode.o
+
+# target to build an object file
+Parser_pseudocode.cpp.o:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/Parser_pseudocode.cpp.o
+.PHONY : Parser_pseudocode.cpp.o
+
+Parser_pseudocode.i: Parser_pseudocode.cpp.i
+
+.PHONY : Parser_pseudocode.i
+
+# target to preprocess a source file
+Parser_pseudocode.cpp.i:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/Parser_pseudocode.cpp.i
+.PHONY : Parser_pseudocode.cpp.i
+
+Parser_pseudocode.s: Parser_pseudocode.cpp.s
+
+.PHONY : Parser_pseudocode.s
+
+# target to generate assembly for a file
+Parser_pseudocode.cpp.s:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/Parser_pseudocode.cpp.s
+.PHONY : Parser_pseudocode.cpp.s
+
 StringAutomaton.o: StringAutomaton.cpp.o
 
 .PHONY : StringAutomaton.o
@@ -507,6 +534,9 @@ help:
 	@echo "... MatcherAutomaton.o"
 	@echo "... MatcherAutomaton.i"
 	@echo "... MatcherAutomaton.s"
+	@echo "... Parser_pseudocode.o"
+	@echo "... Parser_pseudocode.i"
+	@echo "... Parser_pseudocode.s"
 	@echo "... StringAutomaton.o"
 	@echo "... StringAutomaton.i"
 	@echo "... StringAutomaton.s"
