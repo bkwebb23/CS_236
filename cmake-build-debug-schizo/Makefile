@@ -231,6 +231,33 @@ CommentAutomaton.cpp.s:
 	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/CommentAutomaton.cpp.s
 .PHONY : CommentAutomaton.cpp.s
 
+DatalogProgram.o: DatalogProgram.cpp.o
+
+.PHONY : DatalogProgram.o
+
+# target to build an object file
+DatalogProgram.cpp.o:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/DatalogProgram.cpp.o
+.PHONY : DatalogProgram.cpp.o
+
+DatalogProgram.i: DatalogProgram.cpp.i
+
+.PHONY : DatalogProgram.i
+
+# target to preprocess a source file
+DatalogProgram.cpp.i:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/DatalogProgram.cpp.i
+.PHONY : DatalogProgram.cpp.i
+
+DatalogProgram.s: DatalogProgram.cpp.s
+
+.PHONY : DatalogProgram.s
+
+# target to generate assembly for a file
+DatalogProgram.cpp.s:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/DatalogProgram.cpp.s
+.PHONY : DatalogProgram.cpp.s
+
 E_O_FAutomaton.o: E_O_FAutomaton.cpp.o
 
 .PHONY : E_O_FAutomaton.o
@@ -339,32 +366,32 @@ MatcherAutomaton.cpp.s:
 	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/MatcherAutomaton.cpp.s
 .PHONY : MatcherAutomaton.cpp.s
 
-Parser_pseudocode.o: Parser_pseudocode.cpp.o
+Parser.o: Parser.cpp.o
 
-.PHONY : Parser_pseudocode.o
+.PHONY : Parser.o
 
 # target to build an object file
-Parser_pseudocode.cpp.o:
-	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/Parser_pseudocode.cpp.o
-.PHONY : Parser_pseudocode.cpp.o
+Parser.cpp.o:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/Parser.cpp.o
+.PHONY : Parser.cpp.o
 
-Parser_pseudocode.i: Parser_pseudocode.cpp.i
+Parser.i: Parser.cpp.i
 
-.PHONY : Parser_pseudocode.i
+.PHONY : Parser.i
 
 # target to preprocess a source file
-Parser_pseudocode.cpp.i:
-	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/Parser_pseudocode.cpp.i
-.PHONY : Parser_pseudocode.cpp.i
+Parser.cpp.i:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/Parser.cpp.i
+.PHONY : Parser.cpp.i
 
-Parser_pseudocode.s: Parser_pseudocode.cpp.s
+Parser.s: Parser.cpp.s
 
-.PHONY : Parser_pseudocode.s
+.PHONY : Parser.s
 
 # target to generate assembly for a file
-Parser_pseudocode.cpp.s:
-	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/Parser_pseudocode.cpp.s
-.PHONY : Parser_pseudocode.cpp.s
+Parser.cpp.s:
+	$(MAKE) -f CMakeFiles/project_1.dir/build.make CMakeFiles/project_1.dir/Parser.cpp.s
+.PHONY : Parser.cpp.s
 
 StringAutomaton.o: StringAutomaton.cpp.o
 
@@ -522,6 +549,9 @@ help:
 	@echo "... CommentAutomaton.o"
 	@echo "... CommentAutomaton.i"
 	@echo "... CommentAutomaton.s"
+	@echo "... DatalogProgram.o"
+	@echo "... DatalogProgram.i"
+	@echo "... DatalogProgram.s"
 	@echo "... E_O_FAutomaton.o"
 	@echo "... E_O_FAutomaton.i"
 	@echo "... E_O_FAutomaton.s"
@@ -534,9 +564,9 @@ help:
 	@echo "... MatcherAutomaton.o"
 	@echo "... MatcherAutomaton.i"
 	@echo "... MatcherAutomaton.s"
-	@echo "... Parser_pseudocode.o"
-	@echo "... Parser_pseudocode.i"
-	@echo "... Parser_pseudocode.s"
+	@echo "... Parser.o"
+	@echo "... Parser.i"
+	@echo "... Parser.s"
 	@echo "... StringAutomaton.o"
 	@echo "... StringAutomaton.i"
 	@echo "... StringAutomaton.s"

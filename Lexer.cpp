@@ -115,3 +115,7 @@ string Lexer::toString() {
     s << "Total Tokens = " << to_string(tokens.size());
     return s.str();
 }
+
+const vector<Token *> &Lexer::getTokens() const {
+    return tokens;
+}

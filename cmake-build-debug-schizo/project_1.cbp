@@ -111,6 +111,12 @@
 		<Unit filename="/users/guest/b/bkwebb23/project-1/CommentAutomaton.h">
 			<Option target="project_1"/>
 		</Unit>
+		<Unit filename="/users/guest/b/bkwebb23/project-1/DatalogProgram.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="/users/guest/b/bkwebb23/project-1/DatalogProgram.h">
+			<Option target="project_1"/>
+		</Unit>
 		<Unit filename="/users/guest/b/bkwebb23/project-1/E_O_FAutomaton.cpp">
 			<Option target="project_1"/>
 		</Unit>
@@ -135,7 +141,10 @@
 		<Unit filename="/users/guest/b/bkwebb23/project-1/MatcherAutomaton.h">
 			<Option target="project_1"/>
 		</Unit>
-		<Unit filename="/users/guest/b/bkwebb23/project-1/Parser pseudocode.cpp">
+		<Unit filename="/users/guest/b/bkwebb23/project-1/Parser.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="/users/guest/b/bkwebb23/project-1/Parser.h">
 			<Option target="project_1"/>
 		</Unit>
 		<Unit filename="/users/guest/b/bkwebb23/project-1/StringAutomaton.cpp">
