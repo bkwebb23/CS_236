@@ -24,7 +24,8 @@ void Parser::parse() {
 std::string Parser::toString() {
     std::stringstream s;
     if (success) {
-        s << "Success!";
+        s << "Success!\n";
+        s << dlProgram.toString();
     }
     return s.str();
 }

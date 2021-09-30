@@ -9,6 +9,7 @@
 #include <string>
 #include "iostream"
 #include "Token.h"
+#include "DatalogProgram.h"
 
 class Parser {
 private:
@@ -33,6 +34,7 @@ private:
     bool match(TokenType);
     bool success;
     std::vector<Token*> tokens;
+    DatalogProgram dlProgram;
     // DatalogProgram parse();
 public:
     Parser();
