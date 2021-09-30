@@ -1,116 +1,180 @@
-//
-// Created by bkweb on 9/29/2021.
-//
-
 #include "Parser.h"
 #include "Token.h"
 #include <sstream>
 
-
 Parser::Parser() = default;
 Parser::Parser(const std::vector<Token*>& tokens) {
     index = 0;
+    success = false;
     this->tokens = tokens;
     parse();
 }
 
 void Parser::parse() {
     try {
-        datalogProgram();
+        parseDatalogProgram();
+        success = true;
     } catch (Token* error) {
-        std::cout << "Failure!\n\t" << error->toString();
+        std::cout << "Failure!\n  " << error->toString();
+    } catch (const std::out_of_range& oor) {
+        std::cout << "Failure!\n";
     }
 }
 
 std::string Parser::toString() {
-    std::stringstream s("Tokens");
-    s << "This probably doesn't work yet";
+    std::stringstream s;
+    if (success) {
+        s << "Success!";
+    }
     return s.str();
 }
 
-void Parser::datalogProgram() {
+void Parser::parseDatalogProgram() {
     match(TokenType::SCHEMES);
     match(TokenType::COLON);
-    scheme();
-    schemeList();
+    parseScheme();
+    parseSchemeList();
     match(TokenType::FACTS);
     match(TokenType::COLON);
-    factList();
+    parseFactList();
     match(TokenType::RULES);
     match(TokenType::COLON);
-    ruleList();
+    parseRuleList();
     match(TokenType::QUERIES);
     match(TokenType::COLON);
-    query();
-    queryList();
+    parseQuery();
+    parseQueryList();
     match(TokenType::E_O_F);
 }
 
-void Parser::schemeList() {
-    std::cout << "iteration\n";
-    if (tokens.at(index)->getType() == TokenType::FACTS) {
+void Parser::parseSchemeList() {
+    if (tokens.at(index)->getType() == TokenType::ID) {
         return;
+    } else {
+        parseScheme();
+        parseSchemeList();
     }
-    else {
-        scheme();
-        schemeList();
+}
+
+void Parser::parseFactList() {
+    if (tokens.at(index)->getType() == TokenType::RULES){
+        return;
+    } else {
+        parseFact();
+        parseFactList();
     }
 }
 
-void Parser::factList() {
-
+void Parser::parseRuleList() {
+    if (tokens.at(index)->getType() == TokenType::QUERIES){
+        return;
+    } else {
+        parseRule();
+        parseRuleList();
+    }
 }
 
-void Parser::ruleList() {
-
+void Parser::parseQueryList() {
+    if (tokens.at(index)->getType() == TokenType::E_O_F) {
+        return;
+    } else {
+        parseQuery();
+        parseQueryList();
+    }
 }
 
-void Parser::queryList() {
-
+void Parser::parseScheme() {
+    match(TokenType::ID);
+    match(TokenType::LEFT_PAREN);
+    match(TokenType::ID);
+    parseIDList();
+    match(TokenType::RIGHT_PAREN);
 }
 
-void Parser::scheme() {
-
+void Parser::parseFact() {
+    match(TokenType::ID);
+    match(TokenType::LEFT_PAREN);
+    match(TokenType::STRING);
+    parseStringList();
+    match(TokenType::RIGHT_PAREN);
+    match(TokenType::PERIOD);
 }
 
-void Parser::fact() {
-
+void Parser::parseRule() {
+    parseHeadPredicate();
+    match(TokenType::COLON_DASH);
+    parsePredicate();
+    parsePredicateList();
+    match(TokenType::PERIOD);
 }
 
-void Parser::rule() {
-
+void Parser::parseQuery() {
+    parsePredicate();
+    match(TokenType::Q_MARK);
 }
 
-void Parser::query() {
-
+void Parser::parseHeadPredicate() {
+    match(TokenType::ID);
+    match(TokenType::LEFT_PAREN);
+    match(TokenType::ID);
+    parseIDList();
+    match(TokenType::RIGHT_PAREN);
 }
 
-void Parser::headPredicate() {
-
+void Parser::parsePredicate() {
+    match(TokenType::ID);
+    match(TokenType::LEFT_PAREN);
+    parseParameter();
+    parseParameterList();
+    match(TokenType::RIGHT_PAREN);
 }
 
-void Parser::predicate() {
-
+void Parser::parsePredicateList() {
+    if (tokens.at(index)->getType() == TokenType::PERIOD) {
+        return;
+    } else {
+        match(TokenType::COMMA);
+        parsePredicate();
+        parsePredicateList();
+    }
 }
 
-void Parser::predicateList() {
-
+void Parser::parseParameterList() {
+    if (tokens.at(index)->getType() == TokenType::RIGHT_PAREN) {
+        return;
+    } else {
+        match(TokenType::COMMA);
+        parseParameter();
+        parseParameterList();
+    }
 }
 
-void Parser::parameterList() {
-
+void Parser::parseStringList() {
+    if (tokens.at(index)->getType() == TokenType::RIGHT_PAREN) {
+        return;
+    } else {
+        match(TokenType::COMMA);
+        match(TokenType::STRING);
+        parseStringList();
+    }
 }
 
-void Parser::stringList() {
-
+void Parser::parseIDList() {
+    if (tokens.at(index)->getType() == TokenType::RIGHT_PAREN){
+        return;
+    } else {
+        match(TokenType::COMMA);
+        match(TokenType::ID);
+        parseIDList();
+    }
 }
 
-void Parser::idList() {
-
-}
-
-void Parser::parameter() {
-
+void Parser::parseParameter() {
+    if (tokens.at(index)->getType() == TokenType::STRING) {
+        match(TokenType::STRING);
+    } else {
+        match(TokenType::ID);
+    }
 }
 
 bool Parser::match(TokenType expectedTokenType) {
