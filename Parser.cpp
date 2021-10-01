@@ -30,8 +30,8 @@ std::string Parser::toString() {
     std::stringstream s;
     if (success) {
         s << "Success!\n";
+        s << dlProgram.toString();
     }
-    s << dlProgram.toString();
     return s.str();
 }
 
@@ -148,7 +148,11 @@ void Parser::parsePredicate() {
     tempPredicate->addParameter(tempParameter);
     parseParameterList();
     match(TokenType::RIGHT_PAREN);
-    tempRule->addBodyPredicate(tempPredicate);
+    if (tokens.at(index)->getType() == TokenType::PERIOD || tokens.at(index)->getType() == TokenType::COMMA) {
+        tempRule->addBodyPredicate(tempPredicate);
+    } else if (tokens.at(index)->getType() == TokenType::Q_MARK) {
+        return;
+    }
 }
 
 void Parser::parsePredicateList() {
@@ -184,6 +188,7 @@ void Parser::parseParameterList() {
 
 void Parser::parseQuery() {
     parsePredicate();
+    dlProgram.addQuery(tempPredicate);
     match(TokenType::Q_MARK);
 }
 

@@ -22,7 +22,7 @@ public:
     void addFact(Predicate* givenPredicate);
     void addQuery(Predicate* givenPredicate);
     void addRule(Rule* givenRule);
-
+    void computeDomain();
 private:
     std::vector<Predicate*> schemes;
     std::vector<Predicate*> facts;

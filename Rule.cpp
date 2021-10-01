@@ -19,6 +19,9 @@ std::string Rule::toString() {
     s << headPredicate->toString() << " :- ";
     for (unsigned int i = 0; i < bodyPredicates.size(); i++){
         s << bodyPredicates.at(i)->toString();
+        if (i + 1 != bodyPredicates.size()) {
+            s << ",";
+        }
     }
     return s.str();
 }
