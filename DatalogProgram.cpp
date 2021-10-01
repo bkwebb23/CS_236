@@ -20,6 +20,10 @@ void DatalogProgram::addFact(Predicate *givenPredicate) {
     facts.push_back(givenPredicate);
 }
 
+void DatalogProgram::addRule(Rule *givenRule) {
+    rules.push_back(givenRule);
+}
+
 void DatalogProgram::addQuery(Predicate *givenPredicate) {
     queries.push_back(givenPredicate);
 }
@@ -45,8 +49,3 @@ std::string DatalogProgram::toString() {
     s << "Domain: Fix this!";
     return s.str();
 }
-
-
-
-
-

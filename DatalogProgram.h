@@ -21,7 +21,7 @@ public:
     void addScheme(Predicate *givenPredicate);
     void addFact(Predicate* givenPredicate);
     void addQuery(Predicate* givenPredicate);
-    void addRule();
+    void addRule(Rule* givenRule);
 
 private:
     std::vector<Predicate*> schemes;

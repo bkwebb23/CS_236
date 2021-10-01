@@ -6,16 +6,24 @@
 #define RULE_H
 
 #include <string>
+#include <vector>
 #include "Predicate.h"
 #include "Parameter.h"
 
 class Rule {
 private:
-    Predicate
+    Predicate *headPredicate;
+    std::vector<Predicate*> bodyPredicates;
 public:
     Rule();
     ~Rule();
     std::string toString();
+
+    Predicate *getHeadPredicate() const;
+    void setHeadPredicate(Predicate *headPredicate);
+    const std::vector<Predicate *> &getBodyPredicates() const;
+    void setBodyPredicates(const std::vector<Predicate *> &bodyPredicates);
+    void addBodyPredicate(Predicate *bodyPredicate);
 };
 
 

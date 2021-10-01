@@ -39,6 +39,7 @@ private:
     DatalogProgram dlProgram;
     Predicate *tempPredicate;
     Parameter *tempParameter;
+    Rule *tempRule;
 
     // DatalogProgram parse();
 public:
