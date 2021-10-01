@@ -18,6 +18,11 @@ public:
     ~DatalogProgram();
     std::string toString();
 
+    void addScheme(Predicate *givenPredicate);
+    void addFact(Predicate* givenPredicate);
+    void addQuery(Predicate* givenPredicate);
+    void addRule();
+
 private:
     std::vector<Predicate*> schemes;
     std::vector<Predicate*> facts;

@@ -64,4 +64,8 @@ std::string Token::tokenName(TokenType name) {
     return "Error! Token not recognized (or undefined)";
 }
 
+std::string Token::getValue() {
+    return description;
+}
+
 

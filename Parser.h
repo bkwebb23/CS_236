@@ -10,6 +10,8 @@
 #include "iostream"
 #include "Token.h"
 #include "DatalogProgram.h"
+#include "Predicate.h"
+#include "Parameter.h"
 
 class Parser {
 private:
@@ -35,6 +37,9 @@ private:
     bool success;
     std::vector<Token*> tokens;
     DatalogProgram dlProgram;
+    Predicate *tempPredicate;
+    Parameter *tempParameter;
+
     // DatalogProgram parse();
 public:
     Parser();

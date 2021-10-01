@@ -6,11 +6,22 @@
 #include <sstream>
 
 DatalogProgram::DatalogProgram() {
-
 }
 
 DatalogProgram::~DatalogProgram() {
+}
 
+void DatalogProgram::addScheme(Predicate *givenPredicate) {
+    //Predicate* predicate = &givenPredicate;
+    schemes.push_back(givenPredicate);
+}
+
+void DatalogProgram::addFact(Predicate *givenPredicate) {
+    facts.push_back(givenPredicate);
+}
+
+void DatalogProgram::addQuery(Predicate *givenPredicate) {
+    queries.push_back(givenPredicate);
 }
 
 std::string DatalogProgram::toString() {
@@ -34,5 +45,8 @@ std::string DatalogProgram::toString() {
     s << "Domain: Fix this!";
     return s.str();
 }
+
+
+
 
 

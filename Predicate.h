@@ -1,13 +1,10 @@
-//
-// Created by bkweb on 9/30/2021.
-//
-
 #ifndef PREDICATE_H
 #define PREDICATE_H
 
 #include <string>
 #include <vector>
 #include "Parameter.h"
+#include "Token.h"
 
 class Predicate {
 private:
@@ -16,12 +13,12 @@ private:
 
 public:
     Predicate();
+    Predicate(std::string id);
     ~Predicate();
 
     const std::string &getName() const;
-    void setName(const std::string &name);
-    const std::vector<Parameter *> &getParameters() const;
-    void setParameters(const std::vector<Parameter *> &parameters);
+    void setName(const std::string &id);
+    const std::vector<Parameter*> &getParameters() const;
     void addParameter(Parameter* parameter);
 
     std::string toString();

@@ -3,33 +3,52 @@
 //
 
 #include "Predicate.h"
+#include <sstream>
 
-Predicate::Predicate() {}
+
+Predicate::Predicate() {
+    this->name = std::string();
+    this->parameters = std::vector<Parameter*>();
+}
+
+Predicate::Predicate(std::string id) {
+    this->name = id;
+    this->parameters = std::vector<Parameter*>();
+}
 
 Predicate::~Predicate() {
-
+//    for (unsigned int i = 0; i < parameters.size(); i++){
+//        delete parameters.at(0);
+//    }
 }
 
 std::string Predicate::toString() {
-    return std::string();
+    std::stringstream s;
+    s << name << "(";
+    for (unsigned int i =0; i < parameters.size(); i++) {
+        if (i != 0) {
+            s << ",";
+        }
+        s << parameters.at(i)->toString();
+    }
+    s << ")";
+    return s.str();
 }
 
 const std::string &Predicate::getName() const {
     return name;
 }
 
-void Predicate::setName(const std::string &name) {
-    Predicate::name = name;
+void Predicate::setName(const std::string &id) {
+    Predicate::name = id;
 }
 
 const std::vector<Parameter *> &Predicate::getParameters() const {
     return parameters;
 }
 
-void Predicate::setParameters(const std::vector<Parameter *> &parameters) {
-    Predicate::parameters = parameters;
+void Predicate::addParameter(Parameter* givenParameter) {
+    //Parameter* parameter = &givenParameter;
+    Predicate::parameters.push_back(givenParameter);
 }
 
-void Predicate::addParameter(Parameter* parameter) {
-    Predicate::parameters.push_back(parameter);
-}

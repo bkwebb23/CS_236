@@ -21,7 +21,7 @@ enum class TokenType {
     COMMENT,
     E_O_F,
     UNDEFINED
-}; // don't forget to include EOF
+};
 
 class Token
 {
@@ -36,6 +36,7 @@ public:
     std::string toString();
 
     TokenType getType() const;
+    std::string getValue();
     // TODO: add other needed methods
 };
 

@@ -6,8 +6,12 @@
 #define RULE_H
 
 #include <string>
+#include "Predicate.h"
+#include "Parameter.h"
 
 class Rule {
+private:
+    Predicate
 public:
     Rule();
     ~Rule();

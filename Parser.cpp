@@ -6,6 +6,8 @@ Parser::Parser() = default;
 Parser::Parser(const std::vector<Token*>& tokens) {
     index = 0;
     success = false;
+    this->tempParameter = new Parameter();
+    this->tempPredicate = new Predicate();
     this->tokens = tokens;
     parse();
 }
@@ -14,10 +16,12 @@ void Parser::parse() {
     try {
         parseDatalogProgram();
         success = true;
-    } catch (Token* error) {
-        std::cout << "Failure!\n  " << error->toString();
+    } catch (Token* errorToken) {
+        std::cout << "Failure!\n  " << errorToken->toString();
     } catch (const std::out_of_range& oor) {
         std::cout << "Failure!\n";
+    } catch (std::string genError) {
+        std::cout << "Failure!\n  " << genError;
     }
 }
 
@@ -25,8 +29,8 @@ std::string Parser::toString() {
     std::stringstream s;
     if (success) {
         s << "Success!\n";
-        s << dlProgram.toString();
     }
+    s << dlProgram.toString();
     return s.str();
 }
 
@@ -48,12 +52,36 @@ void Parser::parseDatalogProgram() {
     match(TokenType::E_O_F);
 }
 
+void Parser::parseScheme() {
+    tempPredicate = new Predicate(tokens.at(index)->getValue());
+    match(TokenType::ID);
+    match(TokenType::LEFT_PAREN);
+    tempParameter = new Parameter(tokens.at(index)->getValue(), TokenType::ID);
+    tempPredicate->addParameter(tempParameter);
+    match(TokenType::ID);
+    parseIDList();
+    match(TokenType::RIGHT_PAREN);
+    dlProgram.addScheme(tempPredicate);
+}
+
 void Parser::parseSchemeList() {
-    if (tokens.at(index)->getType() == TokenType::ID) {
+    if (tokens.at(index)->getType() == TokenType::FACTS) {
         return;
     } else {
         parseScheme();
         parseSchemeList();
+    }
+}
+
+void Parser::parseIDList() {
+    if (tokens.at(index)->getType() == TokenType::RIGHT_PAREN){
+        return;
+    } else {
+        match(TokenType::COMMA);
+        tempParameter = new Parameter(tokens.at(index)->getValue(), TokenType::ID);
+        tempPredicate->addParameter(tempParameter);
+        match(TokenType::ID);
+        parseIDList();
     }
 }
 
@@ -66,6 +94,19 @@ void Parser::parseFactList() {
     }
 }
 
+void Parser::parseFact() {
+    tempPredicate = new Predicate(tokens.at(index)->getValue());
+    match(TokenType::ID);
+    match(TokenType::LEFT_PAREN);
+    tempParameter = new Parameter(tokens.at(index)->getValue(), TokenType::STRING);
+    match(TokenType::STRING);
+    tempPredicate->addParameter(tempParameter);
+    parseStringList();
+    match(TokenType::RIGHT_PAREN);
+    match(TokenType::PERIOD);
+    dlProgram.addFact(tempPredicate);
+}
+
 void Parser::parseRuleList() {
     if (tokens.at(index)->getType() == TokenType::QUERIES){
         return;
@@ -75,6 +116,14 @@ void Parser::parseRuleList() {
     }
 }
 
+void Parser::parseRule() {
+    parseHeadPredicate();
+    match(TokenType::COLON_DASH);
+    parsePredicate();
+    parsePredicateList();
+    match(TokenType::PERIOD);
+}
+
 void Parser::parseQueryList() {
     if (tokens.at(index)->getType() == TokenType::E_O_F) {
         return;
@@ -82,31 +131,6 @@ void Parser::parseQueryList() {
         parseQuery();
         parseQueryList();
     }
-}
-
-void Parser::parseScheme() {
-    match(TokenType::ID);
-    match(TokenType::LEFT_PAREN);
-    match(TokenType::ID);
-    parseIDList();
-    match(TokenType::RIGHT_PAREN);
-}
-
-void Parser::parseFact() {
-    match(TokenType::ID);
-    match(TokenType::LEFT_PAREN);
-    match(TokenType::STRING);
-    parseStringList();
-    match(TokenType::RIGHT_PAREN);
-    match(TokenType::PERIOD);
-}
-
-void Parser::parseRule() {
-    parseHeadPredicate();
-    match(TokenType::COLON_DASH);
-    parsePredicate();
-    parsePredicateList();
-    match(TokenType::PERIOD);
 }
 
 void Parser::parseQuery() {
@@ -155,18 +179,10 @@ void Parser::parseStringList() {
         return;
     } else {
         match(TokenType::COMMA);
+        tempParameter = new Parameter(tokens.at(index)->getValue(), TokenType::STRING);
+        tempPredicate->addParameter(tempParameter);
         match(TokenType::STRING);
         parseStringList();
-    }
-}
-
-void Parser::parseIDList() {
-    if (tokens.at(index)->getType() == TokenType::RIGHT_PAREN){
-        return;
-    } else {
-        match(TokenType::COMMA);
-        match(TokenType::ID);
-        parseIDList();
     }
 }
 
