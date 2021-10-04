@@ -1,5 +1,4 @@
 #include "Parser.h"
-#include "Token.h"
 #include <sstream>
 
 Parser::Parser() = default;
@@ -10,14 +9,15 @@ Parser::Parser(const std::vector<Token*>& tokens) {
     this->tempPredicate = new Predicate();
     this->tempRule = new Rule();
     this->tokens = tokens;
-    parse();
+    parse(); // Immediately begin parsing token list
 }
 
 void Parser::parse() {
+    // Check whether the given list of tokens forms a valid datalog program
     try {
         parseDatalogProgram();
         success = true;
-    } catch (Token* errorToken) {
+    } catch (Token* errorToken) { // This should really be the only type of error that's ever thrown
         std::cout << "Failure!\n  " << errorToken->toString();
     } catch (const std::out_of_range& oor) {
         std::cout << "Failure!\n";
@@ -215,6 +215,8 @@ void Parser::parseStringList() {
 
 bool Parser::match(TokenType expectedTokenType) {
     if (expectedTokenType == tokens.at(index)->getType()) {
+        // If the token type in the input vector matches the type expected by the grammar,
+        //      increment the index to consume that token
         index++;
     } else {
         throw tokens.at(index);

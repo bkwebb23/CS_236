@@ -1,7 +1,3 @@
-//
-// Created by bkweb on 9/29/2021.
-//
-
 #include "DatalogProgram.h"
 #include <sstream>
 
@@ -12,7 +8,6 @@ DatalogProgram::~DatalogProgram() {
 }
 
 void DatalogProgram::addScheme(Predicate *givenPredicate) {
-    //Predicate* predicate = &givenPredicate;
     schemes.push_back(givenPredicate);
 }
 
@@ -29,10 +24,13 @@ void DatalogProgram::addQuery(Predicate *givenPredicate) {
 }
 
 void DatalogProgram::computeDomain() {
+    // This nested for loop probably isn't best practice, but it works
     std::vector<Parameter*> factParameters = std::vector<Parameter*>();
     for (unsigned int i = 0; i < facts.size(); i++) {
+        // Loop through each fact and obtains the corresponding list of parameters
         factParameters = facts.at(i)->getParameters();
         for (unsigned int j = 0; j < factParameters.size(); j++){
+            // Loop through each set of parameters and add each to the domain vector
             domain.insert(factParameters.at(j)->getName());
         }
     }

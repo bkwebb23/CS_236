@@ -26,20 +26,23 @@ int main(int argc, char** argv) {
 
     Lexer* lexer = new Lexer(input);
 
+    // Select tokens from input file
     vector<Token*> tokens = lexer->getTokens();
 
+    // Remove comment tokens from input file
     vector<Token*> tokensWOComments;
-
     for (unsigned int i= 0; i < tokens.size(); i++) {
         if (tokens.at(i)->getType() != TokenType::COMMENT) {
             tokensWOComments.push_back(tokens.at(i));
         }
     }
 
+    // Parse through token sequence to determine if the datalog syntax is valid
     Parser* parser = new Parser(tokensWOComments);
-    cout << parser->toString() << "\n";
+    cout << parser->toString();
 
     delete lexer;
+    delete parser;
 
     return 0;
 }

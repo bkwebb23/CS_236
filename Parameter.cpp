@@ -1,9 +1,4 @@
-//
-// Created by bkweb on 9/30/2021.
-//
-
 #include "Parameter.h"
-#include <sstream>
 
 Parameter::Parameter() {
     this->name = "";
@@ -13,7 +8,7 @@ Parameter::Parameter(std::string id, TokenType givenType) {
     this->name = id;
     this->type = givenType;
 }
-Parameter::~Parameter() {}
+Parameter::~Parameter() = default;
 
 const std::string &Parameter::getName() const {
     return name;

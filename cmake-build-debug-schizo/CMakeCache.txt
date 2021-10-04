@@ -220,6 +220,12 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Value Computed by CMake
+CS236_BINARY_DIR:STATIC=/users/guest/b/bkwebb23/project-1/cmake-build-debug-schizo
+
+//Value Computed by CMake
+CS236_SOURCE_DIR:STATIC=/users/guest/b/bkwebb23/project-1
+
 //Path to a program.
 ProcessorCount_cmd_nproc:FILEPATH=/usr/bin/nproc
 

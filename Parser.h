@@ -1,7 +1,3 @@
-//
-// Created by bkweb on 9/29/2021.
-//
-
 #ifndef PARSER_H
 #define PARSER_H
 
@@ -15,7 +11,7 @@
 
 class Parser {
 private:
-    unsigned int index;
+    unsigned int index{};
     void parse();
     void parseDatalogProgram();
     void parseSchemeList();
@@ -34,14 +30,13 @@ private:
     void parseIDList();
     void parseParameter();
     bool match(TokenType);
-    bool success;
+    bool success{};
     std::vector<Token*> tokens;
     DatalogProgram dlProgram;
-    Predicate *tempPredicate;
-    Parameter *tempParameter;
-    Rule *tempRule;
+    Predicate *tempPredicate{};
+    Parameter *tempParameter{};
+    Rule *tempRule{};
 
-    // DatalogProgram parse();
 public:
     Parser();
     Parser(const std::vector<Token*>&);
