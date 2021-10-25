@@ -20,7 +20,7 @@ public:
     Lexer();
     ~Lexer();
 
-    const vector<Token *> &getTokens() const;
+    const vector<Token*> &getTokens() const;
     void Run(std::string& instring);
     string toString();
 };

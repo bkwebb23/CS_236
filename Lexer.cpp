@@ -25,6 +25,10 @@ Lexer::Lexer(string inFile) {
 }
 
 Lexer::~Lexer() {
+//    unsigned int size = tokens.size();
+//    for (unsigned int i = 0; i < size; i++) {
+//        delete tokens.at(i);
+//    }
     // TODO: need to clean up the memory in `automata` and `tokens`
 }
 

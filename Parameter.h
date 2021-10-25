@@ -8,6 +8,7 @@ class Parameter {
 private:
     TokenType type;
     std::string name;
+
 public:
     Parameter();
     Parameter(std::string id, TokenType givenType);

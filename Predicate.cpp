@@ -48,7 +48,6 @@ const std::vector<Parameter *> &Predicate::getParameters() const {
 }
 
 void Predicate::addParameter(Parameter* givenParameter) {
-    //Parameter* parameter = &givenParameter;
     Predicate::parameters.push_back(givenParameter);
 }
 
