@@ -19,13 +19,10 @@ const std::vector<std::string> Tuple::getValues() const {
 
 std::string Tuple::toString() {
     std::stringstream s("");
-    s << "'";
     for (unsigned int i = 0; i < values.size(); i++) {
        s << values.at(i);
        if (!values.at(i).empty()) {
-           s << "', '";
-       } else {
-           s << "'";
+           s << ", ";
        }
     }
     return s.str();

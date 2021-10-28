@@ -21,11 +21,10 @@ public:
     Interpreter(const DatalogProgram& myDLProgram);
     ~Interpreter();
 
-    void evaluateAll(std::vector<Predicate*> predicates);
+    void evaluateAll(const std::vector<Predicate*>& predicates);
     Relation evaluatePredicate(Predicate* p);
 
     std::string toString();
 };
-
 
 #endif //INTERPRETER_H

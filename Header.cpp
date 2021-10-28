@@ -4,18 +4,14 @@
 
 #include "Header.h"
 
-Header::Header() {}
-Header::Header(std::vector<std::string> &attributes) : attributes(attributes) {}
-
-Header::~Header() {
-
-}
+Header::Header() = default;
+Header::~Header() = default;
 
 const std::vector<std::string> &Header::getAttributes() const {
     return attributes;
 }
 
-void Header::addAttribute(std::string attribute) {
+void Header::addAttribute(const std::string& attribute) {
     attributes.push_back(attribute);
 }
 

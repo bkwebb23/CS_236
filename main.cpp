@@ -2,7 +2,6 @@
 #include <iostream>
 #include "Lexer.h"
 #include "Parser.h"
-#include "DatalogProgram.h"
 #include "Interpreter.h"
 
 using namespace std;
@@ -47,12 +46,10 @@ int main(int argc, char** argv) {
     auto* interpreter = new Interpreter(datalogProgram);
 
     cout << interpreter->toString();
-    cout << input;
-
 
     delete lexer;
     delete parser;
-//    delete interpreter;
+    delete interpreter;
 
     return 0;
 }

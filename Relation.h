@@ -18,18 +18,19 @@ private:
 
 public:
     Relation();
-    Relation(std::string name, Header header);
+    Relation(std::string name, const Header& header);
     ~Relation();
 
-    Relation* select(unsigned int colIndex, std::string value);
-    Relation* select(unsigned int index1, unsigned int index2);
-    Relation* project(std::vector<unsigned int> indices);
-    Relation* rename(std::vector<std::string> attributes);
+    Relation select(unsigned int colIndex, const std::string& value);
+    Relation select(unsigned int index1, unsigned int index2);
+    Relation project(const std::vector<unsigned int>& indices);
+    void rename(std::vector<std::string> attributes);
 
     std::string toString();
-    void addTuple(Tuple tuple);
-    void setName(std::string n);
+    void addTuple(const Tuple& tuple);
     std::set<Tuple> getTuples();
+
+    const Header &getHeader() const;
 };
 
 

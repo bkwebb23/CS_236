@@ -4,99 +4,88 @@
 
 #include "Relation.h"
 #include <sstream>
-#include <iostream>
 
-Relation::Relation() {}
+Relation::Relation() = default;
 
-Relation::Relation(std::string name, Header header) {
+Relation::Relation(std::string name, const Header& header) {
     this->name = name;
     this->header = header;
     this->tuples = std::set<Tuple>();
 }
 
-Relation::~Relation() {
+Relation::~Relation() = default;
 
-}
-
-void Relation::setName(std::string n) {
-    this->name = n;
-}
 
 std::string Relation::toString() {
     std::stringstream s("");
-    s << this->name << "(";
-    for (unsigned int i = 0; i < header.getAttributes().size(); i++) {
-        s << header.getAttributes().at(i);
-        if (i + 1 < header.getAttributes().size()){
-            s << ", ";
-        }
-    }
-    s << "):\n";
-    for (Tuple t : tuples) {
-        std::vector<std::string> values = t.getValues();
-        for (auto it = values.begin(); it != values.end(); it++){
-            s << *it;
-            if (std::next(it) != values.end()){
-                s << ", ";
-            }
-        }
-        s << "\n";
+    for (auto tuple : tuples) {
+        s << tuple.toString() << "\n";
     }
     return s.str();
 }
 
-void Relation::addTuple(Tuple tuple) {
+void Relation::addTuple(const Tuple& tuple) {
     tuples.insert(tuple);
 }
 
-Relation* Relation::select(unsigned int colIndex, std::string value) {
-    Relation* newRelation = new Relation(name, header);
-    for (Tuple tuple : tuples) {
+// Returns a relation whose tuples all contain value in column colIndex
+Relation Relation::select(unsigned int colIndex, const std::string& value) {
+    Relation relation = Relation(name, header);
+    for (const Tuple& tuple : tuples) {
         if (tuple.getValues().at(colIndex) == value){
-            newRelation->addTuple(tuple);
+            relation.addTuple(tuple);
         }
     }
-    return newRelation;
+    return relation;
 }
 
-Relation* Relation::select(unsigned int index1, unsigned int index2) {
-    Relation* newRelation = new Relation(name, header);
+// Returns a relation where the values at index1 and index2 match for every tuple
+Relation Relation::select(unsigned int index1, unsigned int index2) {
+    Relation relation = Relation(name, header);
     for (const Tuple& tuple : tuples) {
         if (tuple.getValues().at(index1) == tuple.getValues().at(index2)) {
-            newRelation->addTuple(tuple);
+            relation.addTuple(tuple);
         }
     }
-    return newRelation;
+    return relation;
 }
 
-Relation* Relation::project(std::vector<unsigned int> indices) {
+//
+Relation Relation::project(const std::vector<unsigned int>& indices) {
     Header newHeader = Header();
-    std::vector<std::string> newValues = std::vector<std::string>();
+
+    // Adds the header attributes corresponding to the passed indices to the new header
     for (unsigned int index : indices){
         newHeader.addAttribute(header.getAttributes().at(index));
     }
-    auto* newRelation = new Relation(name, newHeader);
-    for (Tuple tuple : tuples){
+
+    // For each tuple in original relation, adds a new tuple to a new relation only with values corresponding
+    //      to the new header
+    Relation relation = Relation(name, newHeader);
+    for (const Tuple& tuple : tuples){
         Tuple newTuple = Tuple();
         for (unsigned int index : indices){
             newTuple.addValue(tuple.getValues().at(index));
         }
-        newRelation->addTuple(newTuple);
+        relation.addTuple(newTuple);
     }
-
-    return newRelation;
+    return relation;
 }
 
-Relation* Relation::rename(std::vector<std::string> attributes) {
-    auto* newRelation = new Relation(name, header);
+// As the dimension of the header's attributes is equivalent to the vector passed to this function,
+//      we rename each attribute in the header with the string in the corresponding position of the passed vector
+void Relation::rename(std::vector<std::string> attributes) {
     for (unsigned int i = 0; i < attributes.size(); i++) {
         header.renameAttribute(i, attributes.at(i));
     }
-    return newRelation;
 }
 
 std::set<Tuple> Relation::getTuples() {
     return tuples;
+}
+
+const Header &Relation::getHeader() const {
+    return header;
 }
 
 
