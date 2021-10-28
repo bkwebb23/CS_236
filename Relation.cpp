@@ -18,6 +18,10 @@ Relation::~Relation() {
 
 }
 
+void Relation::setName(std::string n) {
+    this->name = n;
+}
+
 std::string Relation::toString() {
     std::stringstream s("");
     s << this->name << "(";
@@ -84,7 +88,16 @@ Relation* Relation::project(std::vector<unsigned int> indices) {
 }
 
 Relation* Relation::rename(std::vector<std::string> attributes) {
-    std::cout << "FIX RENAME";
-    return new Relation();
+    auto* newRelation = new Relation(name, header);
+    for (unsigned int i = 0; i < attributes.size(); i++) {
+        header.renameAttribute(i, attributes.at(i));
+    }
+    return newRelation;
 }
+
+std::set<Tuple> Relation::getTuples() {
+    return tuples;
+}
+
+
 

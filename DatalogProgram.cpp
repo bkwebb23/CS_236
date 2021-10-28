@@ -71,3 +71,7 @@ const std::vector<Predicate *> &DatalogProgram::getFacts() const {
     return facts;
 }
 
+const std::vector<Predicate *> &DatalogProgram::getQueries() const {
+    return queries;
+}
+

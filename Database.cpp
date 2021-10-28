@@ -14,7 +14,7 @@ Database::~Database() {
 
 }
 
-const std::map<std::string, Relation> &Database::getMap() const {
+std::map<std::string, Relation> &Database::getMap() {
     return map;
 }
 

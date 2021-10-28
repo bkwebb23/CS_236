@@ -19,3 +19,7 @@ void Header::addAttribute(std::string attribute) {
     attributes.push_back(attribute);
 }
 
+void Header::renameAttribute(unsigned int index, std::string name) {
+    attributes.at(index) = name;
+}
+

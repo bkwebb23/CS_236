@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
 
     delete lexer;
     delete parser;
-    delete interpreter;
+//    delete interpreter;
 
     return 0;
 }

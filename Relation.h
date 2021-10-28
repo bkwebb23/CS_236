@@ -28,6 +28,8 @@ public:
 
     std::string toString();
     void addTuple(Tuple tuple);
+    void setName(std::string n);
+    std::set<Tuple> getTuples();
 };
 
 

@@ -9,15 +9,20 @@
 #include "Database.h"
 #include <string>
 #include "Parameter.h"
+#include <sstream>
 
 class Interpreter {
 private:
     DatalogProgram dlProgram;
     Database database;
+    std::stringstream s;
 public:
     Interpreter();
     Interpreter(const DatalogProgram& myDLProgram);
     ~Interpreter();
+
+    void evaluateAll(std::vector<Predicate*> predicates);
+    Relation evaluatePredicate(Predicate* p);
 
     std::string toString();
 };

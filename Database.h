@@ -18,7 +18,7 @@ public:
     Database();
     ~Database();
 
-    const std::map<std::string, Relation> &getMap() const;
+    std::map<std::string, Relation> &getMap();
     void addRelation(std::string name, Header header);
     void populateRelation(std::string name, Tuple tuple);
 

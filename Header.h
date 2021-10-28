@@ -19,6 +19,7 @@ public:
 
     const std::vector<std::string> &getAttributes() const;
     void addAttribute(std::string attribute);
+    void renameAttribute(unsigned int index, std::string name);
 };
 
 
