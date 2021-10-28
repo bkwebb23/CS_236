@@ -21,6 +21,12 @@ CMakeFiles/project_1.dir/CommentAutomaton.cpp.o
  /users/guest/b/bkwebb23/project-1/CommentAutomaton.cpp
  /users/guest/b/bkwebb23/project-1/CommentAutomaton.h
  /users/guest/b/bkwebb23/project-1/Token.h
+CMakeFiles/project_1.dir/Database.cpp.o
+ /users/guest/b/bkwebb23/project-1/Database.cpp
+ /users/guest/b/bkwebb23/project-1/Database.h
+ /users/guest/b/bkwebb23/project-1/Header.h
+ /users/guest/b/bkwebb23/project-1/Relation.h
+ /users/guest/b/bkwebb23/project-1/Tuple.h
 CMakeFiles/project_1.dir/DatalogProgram.cpp.o
  /users/guest/b/bkwebb23/project-1/DatalogProgram.cpp
  /users/guest/b/bkwebb23/project-1/DatalogProgram.h
@@ -33,11 +39,26 @@ CMakeFiles/project_1.dir/E_O_FAutomaton.cpp.o
  /users/guest/b/bkwebb23/project-1/E_O_FAutomaton.cpp
  /users/guest/b/bkwebb23/project-1/E_O_FAutomaton.h
  /users/guest/b/bkwebb23/project-1/Token.h
+CMakeFiles/project_1.dir/Header.cpp.o
+ /users/guest/b/bkwebb23/project-1/Header.cpp
+ /users/guest/b/bkwebb23/project-1/Header.h
 CMakeFiles/project_1.dir/IDAutomaton.cpp.o
  /users/guest/b/bkwebb23/project-1/Automaton.h
  /users/guest/b/bkwebb23/project-1/IDAutomaton.cpp
  /users/guest/b/bkwebb23/project-1/IDAutomaton.h
  /users/guest/b/bkwebb23/project-1/Token.h
+CMakeFiles/project_1.dir/Interpreter.cpp.o
+ /users/guest/b/bkwebb23/project-1/Database.h
+ /users/guest/b/bkwebb23/project-1/DatalogProgram.h
+ /users/guest/b/bkwebb23/project-1/Header.h
+ /users/guest/b/bkwebb23/project-1/Interpreter.cpp
+ /users/guest/b/bkwebb23/project-1/Interpreter.h
+ /users/guest/b/bkwebb23/project-1/Parameter.h
+ /users/guest/b/bkwebb23/project-1/Predicate.h
+ /users/guest/b/bkwebb23/project-1/Relation.h
+ /users/guest/b/bkwebb23/project-1/Rule.h
+ /users/guest/b/bkwebb23/project-1/Token.h
+ /users/guest/b/bkwebb23/project-1/Tuple.h
 CMakeFiles/project_1.dir/Lexer.cpp.o
  /users/guest/b/bkwebb23/project-1/Automaton.h
  /users/guest/b/bkwebb23/project-1/BlockCommentAutomaton.h
@@ -75,6 +96,11 @@ CMakeFiles/project_1.dir/Predicate.cpp.o
  /users/guest/b/bkwebb23/project-1/Predicate.cpp
  /users/guest/b/bkwebb23/project-1/Predicate.h
  /users/guest/b/bkwebb23/project-1/Token.h
+CMakeFiles/project_1.dir/Relation.cpp.o
+ /users/guest/b/bkwebb23/project-1/Header.h
+ /users/guest/b/bkwebb23/project-1/Relation.cpp
+ /users/guest/b/bkwebb23/project-1/Relation.h
+ /users/guest/b/bkwebb23/project-1/Tuple.h
 CMakeFiles/project_1.dir/Rule.cpp.o
  /users/guest/b/bkwebb23/project-1/Parameter.h
  /users/guest/b/bkwebb23/project-1/Predicate.h
@@ -89,6 +115,9 @@ CMakeFiles/project_1.dir/StringAutomaton.cpp.o
 CMakeFiles/project_1.dir/Token.cpp.o
  /users/guest/b/bkwebb23/project-1/Token.cpp
  /users/guest/b/bkwebb23/project-1/Token.h
+CMakeFiles/project_1.dir/Tuple.cpp.o
+ /users/guest/b/bkwebb23/project-1/Tuple.cpp
+ /users/guest/b/bkwebb23/project-1/Tuple.h
 CMakeFiles/project_1.dir/UnclosedCommentAutomaton.cpp.o
  /users/guest/b/bkwebb23/project-1/Automaton.h
  /users/guest/b/bkwebb23/project-1/Token.h
@@ -101,11 +130,16 @@ CMakeFiles/project_1.dir/UnclosedStringAutomaton.cpp.o
  /users/guest/b/bkwebb23/project-1/UnclosedStringAutomaton.h
 CMakeFiles/project_1.dir/main.cpp.o
  /users/guest/b/bkwebb23/project-1/Automaton.h
+ /users/guest/b/bkwebb23/project-1/Database.h
  /users/guest/b/bkwebb23/project-1/DatalogProgram.h
+ /users/guest/b/bkwebb23/project-1/Header.h
+ /users/guest/b/bkwebb23/project-1/Interpreter.h
  /users/guest/b/bkwebb23/project-1/Lexer.h
  /users/guest/b/bkwebb23/project-1/Parameter.h
  /users/guest/b/bkwebb23/project-1/Parser.h
  /users/guest/b/bkwebb23/project-1/Predicate.h
+ /users/guest/b/bkwebb23/project-1/Relation.h
  /users/guest/b/bkwebb23/project-1/Rule.h
  /users/guest/b/bkwebb23/project-1/Token.h
+ /users/guest/b/bkwebb23/project-1/Tuple.h
  /users/guest/b/bkwebb23/project-1/main.cpp

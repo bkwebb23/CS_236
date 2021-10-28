@@ -15,6 +15,42 @@ add_executable(project_1
         ColonDashAutomaton.h
         Lexer.cpp
         Lexer.h
-        main.cpp
         Token.cpp
-        Token.h CommentAutomaton.cpp CommentAutomaton.h E_O_FAutomaton.cpp E_O_FAutomaton.h MatcherAutomaton.cpp MatcherAutomaton.h StringAutomaton.cpp StringAutomaton.h IDAutomaton.cpp IDAutomaton.h BlockCommentAutomaton.cpp BlockCommentAutomaton.h UnclosedStringAutomaton.cpp UnclosedStringAutomaton.h UnclosedCommentAutomaton.cpp UnclosedCommentAutomaton.h Parser.cpp Parser.h DatalogProgram.cpp DatalogProgram.h Rule.cpp Rule.h Predicate.cpp Predicate.h Parameter.cpp Parameter.h Database.cpp Database.h Relation.cpp Relation.h Header.cpp Header.h Tuple.cpp Tuple.h)
+        Token.h
+        CommentAutomaton.cpp
+        CommentAutomaton.h
+        E_O_FAutomaton.cpp
+        E_O_FAutomaton.h
+        MatcherAutomaton.cpp
+        MatcherAutomaton.h
+        StringAutomaton.cpp
+        StringAutomaton.h
+        IDAutomaton.cpp
+        IDAutomaton.h
+        BlockCommentAutomaton.cpp
+        BlockCommentAutomaton.h
+        UnclosedStringAutomaton.cpp
+        UnclosedStringAutomaton.h
+        UnclosedCommentAutomaton.cpp
+        UnclosedCommentAutomaton.h
+        Parser.cpp
+        Parser.h
+        DatalogProgram.cpp
+        DatalogProgram.h
+        Rule.cpp
+        Rule.h
+        Predicate.cpp
+        Predicate.h
+        Parameter.cpp
+        Parameter.h
+        Database.cpp
+        Database.h
+        Relation.cpp
+        Relation.h
+        Header.cpp
+        Header.h
+        Tuple.cpp
+        Tuple.h
+        Interpreter.cpp
+        Interpreter.h
+        main.cpp)

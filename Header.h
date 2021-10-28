@@ -14,10 +14,11 @@ private:
 
 public:
     Header();
-    Header(const std::vector<std::string> &attributes);
+    Header(std::vector<std::string> &attributes);
     ~Header();
 
     const std::vector<std::string> &getAttributes() const;
+    void addAttribute(std::string attribute);
 };
 
 

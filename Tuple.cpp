@@ -13,7 +13,7 @@ Tuple::~Tuple() {
 
 }
 
-const std::vector<std::string> &Tuple::getValues() const {
+const std::vector<std::string> Tuple::getValues() const {
     return values;
 }
 
@@ -30,3 +30,24 @@ std::string Tuple::toString() {
     }
     return s.str();
 }
+
+void Tuple::addValue(std::string value) {
+    values.push_back(value);
+}
+
+bool Tuple::operator<(const Tuple &rhs) const {
+    return values < rhs.values;
+}
+
+bool Tuple::operator>(const Tuple &rhs) const {
+    return rhs < *this;
+}
+
+bool Tuple::operator<=(const Tuple &rhs) const {
+    return !(rhs < *this);
+}
+
+bool Tuple::operator>=(const Tuple &rhs) const {
+    return !(*this < rhs);
+}
+

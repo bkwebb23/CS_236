@@ -1,23 +1,14 @@
-#makefile for lab 2 pass off cases
-NUM:=2
-buckets:=80 100
-numbers_80:=0 1 2 3 4 5 6 7
-numbers_100:=0
-tests:=Lab$(NUM)PassOffCases
+NUM?=3
+numbers=30 33 35 36 37 41 42 43 44 61 62
+tests=project$(NUM)-exampleIO
 
-.SILENT: all $(buckets)
-
-all: $(buckets)
-	@rm $(tests)/out.txt
-
-$(buckets):
-	echo "Bucket $@"; \
-	for number in ${numbers_$@} ; \
+run:
+	for number in $(numbers); \
 	do \
-		echo "Running input $$number" ; \
-		./lab$(NUM) $(tests)/$(NUM)-$@/input$$number.txt > $(tests)/out.txt ; \
-		diff -w $(tests)/$(NUM)-$@/answer$$number.txt $(tests)/out.txt || (echo "diff failed on test $$number \n") ; \
-	done \
+		./lab$(NUM) $(tests)/in$$number.txt > $(tests)/out.txt ; \
+		diff $(tests)/out$$number.txt $(tests)/out.txt || (echo "diff failed on test $$number \n") ; \
+	done
+	rm $(tests)/out.txt
 
 compile:
 	g++ -Wall -Werror -std=c++17 -g *.cpp -o lab$(NUM)

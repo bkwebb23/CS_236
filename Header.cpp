@@ -5,7 +5,7 @@
 #include "Header.h"
 
 Header::Header() {}
-Header::Header(const std::vector<std::string> &attributes) : attributes(attributes) {}
+Header::Header(std::vector<std::string> &attributes) : attributes(attributes) {}
 
 Header::~Header() {
 
@@ -13,5 +13,9 @@ Header::~Header() {
 
 const std::vector<std::string> &Header::getAttributes() const {
     return attributes;
+}
+
+void Header::addAttribute(std::string attribute) {
+    attributes.push_back(attribute);
 }
 

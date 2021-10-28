@@ -224,4 +224,8 @@ bool Parser::match(TokenType expectedTokenType) {
     return true;
 }
 
+const DatalogProgram &Parser::getDlProgram() const {
+    return dlProgram;
+}
+
 Parser::~Parser() = default;

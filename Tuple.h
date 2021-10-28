@@ -16,8 +16,14 @@ public:
     Tuple();
     ~Tuple();
 
-    const std::vector<std::string> &getValues() const;
+    const std::vector<std::string> getValues() const;
+    void addValue(std::string value);
     std::string toString();
+
+    bool operator<(const Tuple &rhs) const;
+    bool operator>(const Tuple &rhs) const;
+    bool operator<=(const Tuple &rhs) const;
+    bool operator>=(const Tuple &rhs) const;
 };
 
 

@@ -6,8 +6,8 @@
 #define RELATION_H
 
 #include <set>
-#include "Tuple.h"
 #include <string>
+#include "Tuple.h"
 #include "Header.h"
 
 class Relation {
@@ -18,9 +18,16 @@ private:
 
 public:
     Relation();
+    Relation(std::string name, Header header);
     ~Relation();
 
+    Relation* select(unsigned int colIndex, std::string value);
+    Relation* select(unsigned int index1, unsigned int index2);
+    Relation* project(std::vector<unsigned int> indices);
+    Relation* rename(std::vector<std::string> attributes);
+
     std::string toString();
+    void addTuple(Tuple tuple);
 };
 
 

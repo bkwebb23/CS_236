@@ -42,6 +42,8 @@ public:
     Parser(const std::vector<Token*>&);
     ~Parser();
 
+    const DatalogProgram &getDlProgram() const;
+
     std::string toString();
 
 };

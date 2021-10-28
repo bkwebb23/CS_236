@@ -9,6 +9,12 @@
 
 
 class DatalogProgram {
+private:
+    std::vector<Predicate*> schemes;
+    std::vector<Predicate*> facts;
+    std::vector<Predicate*> queries;
+    std::vector<Rule*> rules;
+    std::set<std::string> domain;
 public:
     DatalogProgram();
     ~DatalogProgram();
@@ -19,12 +25,9 @@ public:
     void addQuery(Predicate* givenPredicate);
     void addRule(Rule* givenRule);
     void computeDomain();
-private:
-    std::vector<Predicate*> schemes;
-    std::vector<Predicate*> facts;
-    std::vector<Predicate*> queries;
-    std::vector<Rule*> rules;
-    std::set<std::string> domain;
+
+    const std::vector<Predicate *> &getSchemes() const;
+    const std::vector<Predicate *> &getFacts() const;
 };
 
 

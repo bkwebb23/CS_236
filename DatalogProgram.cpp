@@ -63,3 +63,11 @@ std::string DatalogProgram::toString() {
     return s.str();
 }
 
+const std::vector<Predicate *> &DatalogProgram::getSchemes() const {
+    return schemes;
+}
+
+const std::vector<Predicate *> &DatalogProgram::getFacts() const {
+    return facts;
+}
+
