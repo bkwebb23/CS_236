@@ -21,8 +21,10 @@ public:
     Interpreter(const DatalogProgram& myDLProgram);
     ~Interpreter();
 
-    void evaluateAll(const std::vector<Predicate*>& predicates);
-    Relation evaluatePredicate(Predicate* p);
+    void evaluateQueries(const std::vector<Predicate*>& predicates);
+    void evaluateRules(const std::vector<Rule*>& rules);
+    void evaluateRule(Rule* rule);
+    Relation evaluatePredicate(Predicate* p, bool isQuery= false);
 
     std::string toString();
 };

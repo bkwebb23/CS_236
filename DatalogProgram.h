@@ -29,6 +29,7 @@ public:
     const std::vector<Predicate *> &getSchemes() const;
     const std::vector<Predicate *> &getFacts() const;
     const std::vector<Predicate *> &getQueries() const;
+    const std::vector<Rule *> &getRules() const;
 };
 
 

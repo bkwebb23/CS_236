@@ -40,7 +40,6 @@ CMakeFiles/project_1.dir/E_O_FAutomaton.cpp.o: ../E_O_FAutomaton.h
 CMakeFiles/project_1.dir/E_O_FAutomaton.cpp.o: ../Token.h
 
 CMakeFiles/project_1.dir/Header.cpp.o: ../Header.cpp
-CMakeFiles/project_1.dir/Header.cpp.o: ../Header.h
 
 CMakeFiles/project_1.dir/IDAutomaton.cpp.o: ../Automaton.h
 CMakeFiles/project_1.dir/IDAutomaton.cpp.o: ../IDAutomaton.cpp

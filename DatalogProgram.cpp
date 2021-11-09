@@ -48,7 +48,7 @@ std::string DatalogProgram::toString() {
     }
     s << "Rules(" << std::to_string(rules.size()) << "):\n";
     for (unsigned int i = 0; i < rules.size(); i++) {
-        s << "  " << rules.at(i)->toString() << ".\n";
+        s << "  " << rules.at(i)->toString() << "\n";
     }
     s << "Queries(" << std::to_string(queries.size()) << "):\n";
     for (unsigned int i = 0; i < queries.size(); i++) {
@@ -73,5 +73,9 @@ const std::vector<Predicate *> &DatalogProgram::getFacts() const {
 
 const std::vector<Predicate *> &DatalogProgram::getQueries() const {
     return queries;
+}
+
+const std::vector<Rule *> &DatalogProgram::getRules() const {
+    return rules;
 }
 

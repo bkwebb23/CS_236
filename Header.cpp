@@ -19,3 +19,10 @@ void Header::renameAttribute(unsigned int index, std::string name) {
     attributes.at(index) = name;
 }
 
+unsigned int Header::attributeIndex(std::string attribute) const {
+    for (unsigned int i = 0; i < attributes.size(); i++) {
+        if (attributes.at(i) == attribute) return i;
+    }
+    return 0;
+}
+

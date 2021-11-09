@@ -17,8 +17,11 @@ public:
     ~Header();
 
     const std::vector<std::string> &getAttributes() const;
+    unsigned int attributeIndex(std::string attribute) const;
     void addAttribute(const std::string& attribute);
     void renameAttribute(unsigned int index, std::string name);
+
+
 };
 
 

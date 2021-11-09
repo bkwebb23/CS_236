@@ -21,6 +21,8 @@ std::string Rule::toString() {
         s << bodyPredicates.at(i)->toString();
         if (i + 1 != bodyPredicates.size()) {
             s << ",";
+        } else {
+            s << ".";
         }
     }
     return s.str();

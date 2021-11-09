@@ -6,34 +6,26 @@
 
 #IncludeRegexTransform: 
 
-/users/guest/b/bkwebb23/project-1/Database.cpp
-map
--
-string
--
-Database.h
-/users/guest/b/bkwebb23/project-1/Database.h
-Relation.h
-/users/guest/b/bkwebb23/project-1/Relation.h
-
-/users/guest/b/bkwebb23/project-1/Database.h
-map
--
-Relation.h
-/users/guest/b/bkwebb23/project-1/Relation.h
-Header.h
-/users/guest/b/bkwebb23/project-1/Header.h
-
 /users/guest/b/bkwebb23/project-1/Header.h
 vector
 -
 string
 -
 
+/users/guest/b/bkwebb23/project-1/Relation.cpp
+Relation.h
+/users/guest/b/bkwebb23/project-1/Relation.h
+sstream
+-
+iostream
+/users/guest/b/bkwebb23/project-1/iostream
+
 /users/guest/b/bkwebb23/project-1/Relation.h
 set
 -
 string
+-
+map
 -
 Tuple.h
 /users/guest/b/bkwebb23/project-1/Tuple.h
