@@ -7,8 +7,9 @@
 
 #include "DatalogProgram.h"
 #include "Database.h"
-#include <string>
 #include "Parameter.h"
+#include "Graph.h"
+#include <string>
 #include <sstream>
 
 class Interpreter {
@@ -16,6 +17,7 @@ private:
     DatalogProgram dlProgram;
     Database database;
     std::stringstream s;
+    Graph myGraph;
 public:
     Interpreter();
     Interpreter(const DatalogProgram& myDLProgram);

@@ -53,4 +53,4 @@ add_executable(project_1
         Tuple.h
         Interpreter.cpp
         Interpreter.h
-        main.cpp)
+        main.cpp Graph.cpp Graph.h)

@@ -112,6 +112,12 @@ void Interpreter::evaluateQueries(const std::vector<Predicate *>& predicates) {
 }
 
 void Interpreter::evaluateRules(const std::vector<Rule *> &rules) {
+
+    myGraph = Graph(rules);
+    std::cout << myGraph.toString();
+    Graph reversed = myGraph.reverseGraph();
+    std::cout << reversed.toString();
+
     s << "Rule Evaluation\n";
     bool changed = true;
     unsigned int prev = 0;
