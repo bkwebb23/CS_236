@@ -113,31 +113,72 @@ void Interpreter::evaluateQueries(const std::vector<Predicate *>& predicates) {
 
 void Interpreter::evaluateRules(const std::vector<Rule *> &rules) {
 
+    // OUTPUT DEPENDENCY GRAPHS
     myGraph = Graph(rules);
     std::cout << myGraph.toString();
-    Graph reversed = myGraph.reverseGraph();
-    std::cout << reversed.toString();
+    std::vector<std::set<int>> forest = myGraph.getSCCS();
 
+    // EVALUATE RULES CORRESPONDING TO EACH SCC
     s << "Rule Evaluation\n";
-    bool changed = true;
-    unsigned int prev = 0;
-    unsigned int numTuples = 0;
-    unsigned int numPasses = 0;
-    while(changed) {
-        for (Rule* rule : rules) {
-            evaluateRule(rule);
+
+    // Loop through every SCC
+    for (auto& tree : forest) {
+        s << "SCC: ";
+
+        // Output the rules in each SCC
+        for (auto it = tree.begin(); it != tree.end(); it++) {
+            s << "R" << std::to_string(*it);
+            if (std::next(it) != tree.end()) {
+                s << ",";
+            }
         }
-        for (const auto& kv : database.getMap()) {
-            numTuples += kv.second.getTuples().size();
+        s << "\n";
+        bool changed = true;                // Whether or not a loop through the SCC actually produces more facts
+        unsigned int prev = 0;              // Number of tuples after previous pass-through
+        unsigned int numTuples = 0;         // Current number of tuples in the set of relations
+        unsigned int numPasses = 0;         // Total number of times we've looped through this SCC
+
+        // Loop until evaluating each rule in the SCC doesn't produce more tuples
+        while(changed) {
+
+            // Evaluate each rule in the SCC
+            for (auto& item : tree) {
+                evaluateRule(rules.at(item));
+                if (tree.size() == 1) {
+                    bool recursive = false;
+                    std::string rule_name = rules.at(item)->getHeadPredicate()->getName();
+                    for (auto& bodyPred : rules.at(item)->getBodyPredicates()) {
+                        if (bodyPred ->getName() == rule_name) {
+                            recursive = true;
+                            break;
+                        }
+                    }
+                    // If the SCC only has one rule, and it doesn't depend on itself, we don't need to loop again
+                    if (!recursive) {
+                        changed = false;
+                    }
+                }
+            }
+            for (const auto& kv : database.getMap()) {
+                numTuples += kv.second.getTuples().size();
+            }
+            if (prev == numTuples) {
+                changed = false;
+            }
+            prev = numTuples;
+            numTuples = 0;
+            numPasses++;
         }
-        if (prev == numTuples) {
-            changed = false;
+        s << std::to_string(numPasses) << " passes: ";
+        for (auto it = tree.begin(); it != tree.end(); it++) {
+            s << "R" << std::to_string(*it);
+            if (std::next(it) != tree.end()) {
+                s << ",";
+            }
         }
-        prev = numTuples;
-        numTuples = 0;
-        numPasses++;
+        s << "\n";
     }
-    s << "\nSchemes populated after " << std::to_string(numPasses) << " passes through the Rules.\n\n";
+    s << "\n";
 }
 
 void Interpreter::evaluateRule(Rule *rule) {
@@ -148,7 +189,6 @@ void Interpreter::evaluateRule(Rule *rule) {
     }
     Relation relation = rhRelations.at(0);
     if (rhRelations.size() > 1) {
-//    Not sure if this should start at i=0 or i=1
         for (unsigned int i = 1; i < rhRelations.size(); i++) {
             relation  = relation.naturalJoin(rhRelations.at(i));
         }

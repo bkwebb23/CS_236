@@ -18,9 +18,10 @@ private:
     Database database;
     std::stringstream s;
     Graph myGraph;
+
 public:
     Interpreter();
-    Interpreter(const DatalogProgram& myDLProgram);
+    explicit Interpreter(const DatalogProgram& myDLProgram);
     ~Interpreter();
 
     void evaluateQueries(const std::vector<Predicate*>& predicates);
